@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.0990566, g: 0.44942343, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -104,8 +104,7 @@ GameObject:
   - component: {fileID: 7577920369259524898}
   - component: {fileID: 5141370182519659736}
   - component: {fileID: 7187631242532607998}
-  - component: {fileID: 175719733602499808}
-  - component: {fileID: 549309698110338669}
+  - component: {fileID: 595018777671603539}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -121,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9143090636605625329}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -202,22 +201,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!111 &175719733602499808
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9143090636605625329}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!114 &549309698110338669
+--- !u!114 &595018777671603539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +210,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9143090636605625329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d8e4e529cf91a4c9f06dc151f6c967, type: 3}
+  m_Script: {fileID: 11500000, guid: 018d43eaed7526e48abdc9494d76d2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 9143090636605625329}
