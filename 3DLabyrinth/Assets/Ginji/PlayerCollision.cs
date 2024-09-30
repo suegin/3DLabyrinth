@@ -10,7 +10,6 @@ public class PlayerCollision : MonoBehaviour
         
     }
 
-    /* オブジェクト同士の衝突判定 */
     // オブジェクトが衝突したとき
     void OnCollisionEnter(Collision collision)
     {
