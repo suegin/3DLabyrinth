@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SwitchScript : MonoBehaviour
 {
-    float bottomY = -0.1f;
-    float speed = 0.5f;
+    float bottomY; // ボタンの初期のY座標
+    float speed = 0.5f;　// ボタンの沈むスピード
 
-    bool active;
+    bool active;　// ボタンが押されたか押されてないかのフラグ
 
-    public DoorScript door;
+    public DoorScript door; // ドアスクリプトとの連動
     void Update()
     {
         if (active && transform.position.y > bottomY)
@@ -25,7 +25,7 @@ public class SwitchScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!active && other.CompareTag("Player"))
+        if (!active && other.CompareTag("Player"))　// プレイヤーが乗っかったら
         {
             active = true;
         }
