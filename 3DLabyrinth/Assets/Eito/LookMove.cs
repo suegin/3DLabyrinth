@@ -28,11 +28,14 @@ public class LookMove : MonoBehaviour
         _targetPos = quaternionX * _targetPos;
         _targetPos = quaternionY * _targetPos;
 
-        // カメラの向きの
-        //Debug.Log(Vector3.Angle(_targetPos, ));
+        // カメラの向きの制限
+        if (Vector3.Angle(_targetPos, new Vector3(_targetPos.x, 0, _targetPos.z)) <= 60)
+        {
+            // 計算結果をターゲットに反映
+            m_target.transform.localPosition = _targetPos;
+        }
 
-        // 計算結果をターゲットに反映
-        m_target.transform.position = _targetPos;
+
 
         // Unityに
         transform.LookAt(_targetPos);
