@@ -1489,7 +1489,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1666804999}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: OnClick1
+        m_MethodName: OnClickLabyrinthTest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
