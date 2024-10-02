@@ -8,10 +8,6 @@ public class LookMove : MonoBehaviour
     private float x_sensitivity = 100f;
     private float y_sensitivity = 100f;
     Vector3 _targetPos;
-    [SerializeField]
-    GameObject m_target;
-    [SerializeField]
-    GameObject m_target2;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);
     private GameObject m_camera;
 
@@ -24,9 +20,6 @@ public class LookMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // もし回転できない角度になったときに戻す用の位置を保持
-        Vector3 tempPos = _targetPos;
-
         float x_mouse = Input.GetAxis("Horizontal") * x_sensitivity;
         float y_mouse = Input.GetAxis("Vertical") * y_sensitivity;
 
@@ -62,9 +55,6 @@ public class LookMove : MonoBehaviour
 
         // 計算結果をターゲットに反映
         _targetPos = transform.position + m_targetOffset;
-
-        m_target.transform.position = _targetPos;
-        m_target2.transform.position = new Vector3(_targetPos.x, 0, _targetPos.z);
 
         //Debug.Log(_targetPos);
 
