@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class SwitchScript : MonoBehaviour
 {
-    float bottomY; // ボタンの初期のY座標
+    float buttomY; // ボタンの初期のY座標
     float speed = 0.5f;　// ボタンの沈むスピード
-
-    bool active;　// ボタンが押されたか押されてないかのフラグ
-
+    bool isActive;　// ボタンが押されているかどうかのフラグ
     public DoorScript door; // ドアスクリプトとの連動
+
+    void Start()
+    {
+            
+    }
     void Update()
     {
-        if (active && transform.position.y > bottomY)
+        if (isActive && transform.position.y > buttomY)
         {
             transform.position -= Vector3.up * speed * Time.deltaTime;
-            if (transform.position.y <= bottomY )
+            if (transform.position.y <= buttomY )
             {
                 door.isOpen = true;
-                enabled = false;
+                enabled = false; // 何度もisOpen = true にする処理が実行されないための対策
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!active && other.CompareTag("Player"))　// プレイヤーが乗っかったら
+        if (!isActive && other.CompareTag("Player"))　// プレイヤーが乗っかったら
         {
-            active = true;
+             isActive = true;
         }
     }
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Eito/Scene/TitleScene.unity
+    guid: 8effbd37a030d4342b7f6fec8264c0fe
+  - enabled: 1
     path: Assets/Ginji/LabyrinthTest.unity
     guid: b26cb391c10c6ba469c4429b91066b7c
   - enabled: 1

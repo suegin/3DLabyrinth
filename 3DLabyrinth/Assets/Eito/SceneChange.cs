@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     
-    public void OnClick1()
+    public void OnClickLabyrinthTest()
     {
-        SceneManager.LoadScene("Labyrinth Test");
+        SceneManager.LoadScene("LabyrinthTest"); // ゲームシーンに移動
     }
-    //public void OnClick2()
-    //{
-    //    SceneManager.LoadScene("");
-    //}
+    public void OnClickTitleScene()
+    {
+        SceneManager.LoadScene("TitleScene"); // タイトルに移動
+    }
 }
