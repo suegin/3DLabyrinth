@@ -10,6 +10,8 @@ public class LookMove : MonoBehaviour
     Vector3 _targetPos;
     [SerializeField]
     GameObject m_target;
+    [SerializeField]
+    GameObject m_target2;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);
     private GameObject m_camera;
 
@@ -28,6 +30,26 @@ public class LookMove : MonoBehaviour
         float x_mouse = Input.GetAxis("Horizontal") * x_sensitivity;
         float y_mouse = Input.GetAxis("Vertical") * y_sensitivity;
 
+        //Debug.Log(Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right));
+
+        // カメラの向きの制限
+        if (Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right) > 80)
+        {
+            if (y_mouse > 0)
+            {
+                y_mouse = 0;
+            }
+            //Debug.Log("aaa");
+        }
+        if (Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right) < -80)
+        {
+            if (y_mouse < 0)
+            {
+                y_mouse = 0;
+            }
+            //Debug.Log("aaa");
+        }
+
         // クオータニオン使う
         Quaternion quaternionX = Quaternion.AngleAxis(x_mouse * Time.deltaTime, Vector3.up);
         // 自身の向きに合わせて上下の視点移動の軸は変えないといけないっぽい
@@ -41,13 +63,10 @@ public class LookMove : MonoBehaviour
         // 計算結果をターゲットに反映
         _targetPos = transform.position + m_targetOffset;
 
-        // カメラの向きの制限
-        if (Vector3.Angle(_targetPos, new Vector3(m_targetOffset.x, 0, m_targetOffset.z)) > 80)
-        {
-            //_targetPos = new Vector3(_targetPos.x, tempPos.y, _targetPos.z);
-        }
+        m_target.transform.position = _targetPos;
+        m_target2.transform.position = new Vector3(_targetPos.x, 0, _targetPos.z);
 
-        Debug.Log(_targetPos);
+        //Debug.Log(_targetPos);
 
         // Unityに
         m_camera.transform.LookAt(_targetPos);
