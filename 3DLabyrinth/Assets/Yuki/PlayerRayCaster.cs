@@ -18,7 +18,7 @@ public class PlayerRayCaster : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10);
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3);
 
         // Ç‹Ç∏ëŒè€ÇÕÇ»Ç¢Ç∆ÇµÇƒçlÇ¶ÇÈ
         isCatchedCollider = false;
