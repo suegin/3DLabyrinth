@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 105182518}
   - component: {fileID: 105182517}
   - component: {fileID: 105182516}
+  - component: {fileID: 105182520}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -222,12 +223,39 @@ Transform:
   m_GameObject: {fileID: 105182515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &105182520
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105182515}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &585025600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.z
@@ -314,9 +342,15 @@ PrefabInstance:
     - {fileID: 3650166118094093572, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9143090636605625329, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 732358251}
     - targetCorrespondingSourceObject: {fileID: 4428759626006537162, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       insertIndex: -1
       addedObject: {fileID: 909966822}
+    - targetCorrespondingSourceObject: {fileID: 4428759626006537162, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909966824}
   m_SourcePrefab: {fileID: 100100000, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
 --- !u!1 &607209885
 GameObject:
@@ -428,6 +462,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9143090636605625329, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
   m_PrefabInstance: {fileID: 585025600}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &732358251
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732358244}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0.5
+  m_AngularDrag: 0.1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &909966820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4428759626006537162, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
@@ -443,6 +504,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc4ccf6d96cefa4daef97a06e73228b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &909966824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909966820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e784e617889a141893d3342867ab80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &945714224

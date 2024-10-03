@@ -8,6 +8,9 @@ public class PlayerRayCaster : MonoBehaviour
     private Image m_cursor;
     private Color m_red = new Color(1, 0, 0);
     private Color m_gray = new Color(0.8f, 0.8f, 0.8f);
+
+    // 自分の状態
+    private bool m_isGrabbingBall = false;
     public bool isCatchedCollider {  get; private set; }
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,27 @@ public class PlayerRayCaster : MonoBehaviour
     }
 
     void FixedUpdate()
+    {
+        // ボールを見る
+        Ray();
+
+        // 入力とる
+        if (Input.GetKeyDown("joystick button 0"))
+        {
+            if (m_isGrabbingBall)
+            {
+                // 離す処理 長くなるから関数化
+                m_isGrabbingBall = false;
+            }
+            else
+            {
+                // 握る処理
+
+            }
+        }
+    }
+
+    private void Ray()
     {
         RaycastHit hit;
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10);
@@ -27,10 +51,25 @@ public class PlayerRayCaster : MonoBehaviour
         // コライダーがnullならreturn
         if (hit.collider == null) return;
 
-        if (hit.collider.tag=="Ball")
+        if (hit.collider.tag == "Ball")
         {
             isCatchedCollider = true;
             m_cursor.color = m_red;
         }
+    }
+
+    private void Catch()
+    {
+
+    }
+
+    private void Grab()
+    {
+
+    }
+
+    private void Throw()
+    {
+
     }
 }
