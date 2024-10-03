@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(m_xMove);
+        //Debug.Log(m_xMove);
         transform.Translate(m_xMove * Time.fixedDeltaTime, 0, m_zMove * Time.fixedDeltaTime);
     }
 }
