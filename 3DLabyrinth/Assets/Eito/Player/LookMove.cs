@@ -25,8 +25,10 @@ public class LookMove : MonoBehaviour
 
         //Debug.Log(Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right));
 
+        float angle = Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right);
+
         // ƒJƒƒ‰‚ÌŒü‚«‚Ì§ŒÀ
-        if (Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right) > 80)
+        if (angle > 80)
         {
             if (y_mouse > 0)
             {
@@ -34,7 +36,7 @@ public class LookMove : MonoBehaviour
             }
             //Debug.Log("aaa");
         }
-        if (Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right) < -80)
+        if (angle < -80)
         {
             if (y_mouse < 0)
             {
