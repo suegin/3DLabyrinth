@@ -26,11 +26,13 @@ public class PlayerRayCaster : MonoBehaviour
         // 入力とる ネストが気に入らなかったので早期return
         if (!Input.GetKeyDown("joystick button 0")) return;
 
+        // すでにボールを持っていたら
         if (m_isGrabbingBall)
         {
             // 離す処理 長くなるから関数化
             m_isGrabbingBall = false;
         }
+        // でなくて、視界にボールがあるなら
         else if ()
         {
             // 握る処理
