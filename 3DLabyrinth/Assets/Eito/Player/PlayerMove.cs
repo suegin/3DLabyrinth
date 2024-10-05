@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         // ‚¢‚¢Š´‚¶‚ÉŽ©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ð‰ñ“]‚³‚¹‚½‚¢
-        Debug.Log(transform.eulerAngles);
+        //Debug.Log(transform.eulerAngles);
         Vector3 power = new Vector3(m_xMove, 0, m_zMove);
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
         m_rigidbody.AddForce(power);
