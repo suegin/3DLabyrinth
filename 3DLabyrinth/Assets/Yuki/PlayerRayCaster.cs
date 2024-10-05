@@ -10,6 +10,8 @@ public class PlayerRayCaster : MonoBehaviour
     private Color m_gray = new Color(0.8f, 0.8f, 0.8f);
     private Vector3 m_grabPosition = new Vector3(0.5f, -0.2f, 0.7f);
     private const float kThrowPower = 15f;
+    // 入力状態
+    private bool m_isPush;
 
     // 自分の状態
     private bool m_isGrabbingBall = false;
@@ -25,13 +27,19 @@ public class PlayerRayCaster : MonoBehaviour
         m_cursor = GameObject.Find("Cursor").GetComponent<Image>();
     }
 
+    private void Update()
+    {
+        // 入力はUpdateでとる
+        m_isPush = Input.GetKeyDown("joystick button 0");
+    }
+
     void FixedUpdate()
     {
         // オブジェクトを見る
         Ray();
 
-        // 入力とる ネストが気に入らなかったので早期return
-        if (!Input.GetKeyDown("joystick button 0")) return;
+        // 入力が無ければ早期return 
+        if (!m_isPush) return;
 
         // 目の前にスイッチがある
         if (isCatchedSwitchCollider)
@@ -60,6 +68,7 @@ public class PlayerRayCaster : MonoBehaviour
 
         // まず対象はないとして考える
         isCatchedBallCollider = false;
+        isCatchedSwitchCollider = false;
         m_cursor.color = m_gray;
 
         // コライダーがnullならreturn
