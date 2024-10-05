@@ -5,7 +5,7 @@ using UnityEngine;
 // カメラにアタッチして使います
 public class LookMove : MonoBehaviour
 {
-    private float x_sensitivity = 150f;
+    private float x_sensitivity = 100f;
     private float y_sensitivity = 100f;
     Vector3 _targetPos;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);

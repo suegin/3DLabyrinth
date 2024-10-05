@@ -13,7 +13,8 @@ public class PlayerRayCaster : MonoBehaviour
 
     // 自分の状態
     private bool m_isGrabbingBall = false;
-    public bool isCatchedCollider {  get; private set; }
+    public bool isCatchedBallCollider = false;
+    public bool isCatchedSwitchCollider = false;
 
     // 今例キャストに入っているオブジェクト
     private RaycastHit m_raycastHit;
@@ -26,21 +27,26 @@ public class PlayerRayCaster : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ボールを見る
+        // オブジェクトを見る
         Ray();
 
         // 入力とる ネストが気に入らなかったので早期return
         if (!Input.GetKeyDown("joystick button 0")) return;
 
-        // すでにボールを持っていたら
-        if (m_isGrabbingBall)
+        // 目の前にスイッチがある
+        if (isCatchedSwitchCollider)
+        {
+            PressSwitch();
+        }
+        // そうでなく、ボールを持っていたら
+        else if (m_isGrabbingBall)
         {
             // 離す処理 長くなるから関数化
             Throw();
             m_isGrabbingBall = false;
         }
         // でなくて、視界にボールがあるなら
-        else if (isCatchedCollider)
+        else if (isCatchedBallCollider)
         {
             // 握る処理
             Grab();
@@ -53,16 +59,25 @@ public class PlayerRayCaster : MonoBehaviour
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out m_raycastHit, 10);
 
         // まず対象はないとして考える
-        isCatchedCollider = false;
+        isCatchedBallCollider = false;
         m_cursor.color = m_gray;
 
         // コライダーがnullならreturn
         if (m_raycastHit.collider == null) return;
 
-        if (m_raycastHit.collider.tag == "Ball")
+        // コライダーがあるならタグを取得して
+        string tag = m_raycastHit.collider.tag;
+        // 指定したタグと見比べていく
+        switch (tag)
         {
-            isCatchedCollider = true;
-            m_cursor.color = m_red;
+            case "Ball":
+                isCatchedBallCollider = true;
+                m_cursor.color = m_red;
+                break;
+            case "Switch":
+                isCatchedSwitchCollider = true;
+                m_cursor.color = m_red;
+                break;
         }
     }
 
@@ -92,5 +107,12 @@ public class PlayerRayCaster : MonoBehaviour
         // 自分(カメラ)の向きにAddForce
         m_grabObject.GetComponent<Rigidbody>()
             .AddForce(transform.forward * kThrowPower, ForceMode.Impulse);
+    }
+
+    private void PressSwitch()
+    {
+        // レイ上のスイッチに押される命令を出すだけ
+        m_raycastHit.collider.gameObject
+            .GetComponent<YukiSwitchController>().Interect();
     }
 }

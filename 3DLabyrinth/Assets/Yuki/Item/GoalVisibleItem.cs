@@ -9,11 +9,11 @@ public class GoalVisibleItem : Item
 
     // ñΩñºãKë•Ç¬ÇØÇ»Ç¢Ç∆Ç»
     [SerializeField]
-    private GameObject _itemPrefab;
-    private GameObject _canvas;
+    private GameObject m_itemPrefab;
+    private GameObject m_canvas;
     void Start()
     {
-        _canvas = GameObject.Find("Canvas");
+        m_canvas = GameObject.Find("Canvas");
     }
 
     // Update is called once per frame
@@ -25,6 +25,6 @@ public class GoalVisibleItem : Item
     protected override void ItemGet()
     {
         // ê∂ê¨
-        Instantiate(_itemPrefab, _canvas.transform);
+        Instantiate(m_itemPrefab, m_canvas.transform);
     }
 }
