@@ -12,10 +12,12 @@ public class PlayerMove : MonoBehaviour
     private float m_xMove = 0;
     private float m_zMove = 0;
 
+    private Rigidbody m_rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,10 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Debug.Log(m_xMove);
-        transform.Translate(m_xMove * Time.fixedDeltaTime, 0, m_zMove * Time.fixedDeltaTime);
+        // ‚¢‚¢Š´‚¶‚ÉŽ©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ð‰ñ“]‚³‚¹‚½‚¢
+        //Debug.Log(transform.eulerAngles);
+        Vector3 power = new Vector3(m_xMove, 0, m_zMove);
+        power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
+        m_rigidbody.AddForce(power);
     }
 }
