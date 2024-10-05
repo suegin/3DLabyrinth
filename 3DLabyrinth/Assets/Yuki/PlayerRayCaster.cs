@@ -11,13 +11,13 @@ public class PlayerRayCaster : MonoBehaviour
     private Vector3 m_grabPosition = new Vector3(0.5f, -0.2f, 0.7f);
     private const float kThrowPower = 15f;
 
-    // ©•ª‚Ìó‘Ô
+    // è‡ªåˆ†ã®çŠ¶æ…‹
     private bool m_isGrabbingBall = false;
     public bool isCatchedCollider {  get; private set; }
 
-    // ¡—áƒLƒƒƒXƒg‚É“ü‚Á‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg
+    // ä»Šä¾‹ã‚­ãƒ£ã‚¹ãƒˆã«å…¥ã£ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     private RaycastHit m_raycastHit;
-    // ¡‚Á‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
+    // ä»ŠæŒã£ã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     private GameObject m_grabObject;
     void Start()
     {
@@ -26,23 +26,23 @@ public class PlayerRayCaster : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ƒ{[ƒ‹‚ğŒ©‚é
+        // ãƒœãƒ¼ãƒ«ã‚’è¦‹ã‚‹
         Ray();
 
-        // “ü—Í‚Æ‚é ƒlƒXƒg‚ª‹C‚É“ü‚ç‚È‚©‚Á‚½‚Ì‚Å‘Šúreturn
+        // å…¥åŠ›ã¨ã‚‹ ãƒã‚¹ãƒˆãŒæ°—ã«å…¥ã‚‰ãªã‹ã£ãŸã®ã§æ—©æœŸreturn
         if (!Input.GetKeyDown("joystick button 0")) return;
 
-        // ‚·‚Å‚Éƒ{[ƒ‹‚ğ‚Á‚Ä‚¢‚½‚ç
+        // ã™ã§ã«ãƒœãƒ¼ãƒ«ã‚’æŒã£ã¦ã„ãŸã‚‰
         if (m_isGrabbingBall)
         {
-            // —£‚·ˆ— ’·‚­‚È‚é‚©‚çŠÖ”‰»
+            // é›¢ã™å‡¦ç† é•·ããªã‚‹ã‹ã‚‰é–¢æ•°åŒ–
             Throw();
             m_isGrabbingBall = false;
         }
-        // ‚Å‚È‚­‚ÄA‹ŠE‚Éƒ{[ƒ‹‚ª‚ ‚é‚È‚ç
+        // ã§ãªãã¦ã€è¦–ç•Œã«ãƒœãƒ¼ãƒ«ãŒã‚ã‚‹ãªã‚‰
         else if (isCatchedCollider)
         {
-            // ˆ¬‚éˆ—
+            // æ¡ã‚‹å‡¦ç†
             Grab();
             m_isGrabbingBall = true;
         }
@@ -52,11 +52,11 @@ public class PlayerRayCaster : MonoBehaviour
     {
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out m_raycastHit, 10);
 
-        // ‚Ü‚¸‘ÎÛ‚Í‚È‚¢‚Æ‚µ‚Äl‚¦‚é
+        // ã¾ãšå¯¾è±¡ã¯ãªã„ã¨ã—ã¦è€ƒãˆã‚‹
         isCatchedCollider = false;
         m_cursor.color = m_gray;
 
-        // ƒRƒ‰ƒCƒ_[‚ªnull‚È‚çreturn
+        // ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ãŒnullãªã‚‰return
         if (m_raycastHit.collider == null) return;
 
         if (m_raycastHit.collider.tag == "Ball")
@@ -68,28 +68,28 @@ public class PlayerRayCaster : MonoBehaviour
 
     private void Grab()
     {
-        Debug.Log("‚Â‚©‚ñ‚¾");
-        // ©g‚Ìƒƒ“ƒo•Ï”‚É‹L˜^
+        Debug.Log("ã¤ã‹ã‚“ã ");
+        // è‡ªèº«ã®ãƒ¡ãƒ³ãƒå¤‰æ•°ã«è¨˜éŒ²
         m_grabObject = m_raycastHit.collider.gameObject;
-        // Œ©‚Ä‚éƒIƒuƒWƒFƒNƒg‚ğ©•ª‚Ìq‹Ÿ‚É
-        // ƒƒ\ƒbƒhƒ`ƒF[ƒ“‚·‚²‚¢‚¯‚Ç
+        // è¦‹ã¦ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è‡ªåˆ†ã®å­ä¾›ã«
+        // ãƒ¡ã‚½ãƒƒãƒ‰ãƒã‚§ãƒ¼ãƒ³ã™ã”ã„ã‘ã©
         m_grabObject.transform.SetParent(transform, true);
-        // ‚»‚ÌƒIƒuƒWƒFƒNƒg‚ğ“Á’è‚ÌˆÊ’u‚ÉˆÚ“®(‚Â‚©‚ŞŠ´‚¶)
+        // ãã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç‰¹å®šã®ä½ç½®ã«ç§»å‹•(ã¤ã‹ã‚€æ„Ÿã˜)
         m_grabObject.transform.localPosition = m_grabPosition;
-        // ƒIƒuƒWƒFƒNƒg‚Ì•¨—‰‰Z‚ğ–³Œø‰»‚·‚é
+        // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç‰©ç†æ¼”ç®—ã‚’ç„¡åŠ¹åŒ–ã™ã‚‹
         m_grabObject.GetComponent<Rigidbody>().isKinematic = true;
         m_grabObject.GetComponent<SphereCollider>().enabled = false;
     }
 
     private void Throw()
     {
-        Debug.Log("“Š‚°‚é");
-        // –³Œø‰»‚µ‚Ä‚¢‚½•¨—‚ğ•œŠˆ‚³‚¹‚é
+        Debug.Log("æŠ•ã’ã‚‹");
+        // ç„¡åŠ¹åŒ–ã—ã¦ã„ãŸç‰©ç†ã‚’å¾©æ´»ã•ã›ã‚‹
         m_grabObject.GetComponent<Rigidbody>().isKinematic = false;
         m_grabObject.GetComponent<SphereCollider>().enabled = true;
-        // eqŠÖŒW‰ğœ
+        // è¦ªå­é–¢ä¿‚è§£é™¤
         m_grabObject.transform.SetParent(null);
-        // ©•ª(ƒJƒƒ‰)‚ÌŒü‚«‚ÉAddForce
+        // è‡ªåˆ†(ã‚«ãƒ¡ãƒ©)ã®å‘ãã«AddForce
         m_grabObject.GetComponent<Rigidbody>()
             .AddForce(transform.forward * kThrowPower, ForceMode.Impulse);
     }
