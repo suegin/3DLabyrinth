@@ -43,6 +43,11 @@ public class PanelChange : MonoBehaviour
         TitleScene.SetActive(false);
     }
 
+    public void CameraView()
+    {
+
+    }
+
     public void OnClickBack()
     {
         mainPanel.SetActive(false);

@@ -22,7 +22,7 @@ public class DoorScript : MonoBehaviour
         }
         else if (!isOpen && transform.position.y > defaultY)
         {
-            transform.position -= Vector3.up * speed * Time.deltaTime;
+            transform.position -= Vector3.down * speed * Time.deltaTime;
         }
     }
 }
