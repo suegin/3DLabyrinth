@@ -5,8 +5,8 @@ using UnityEngine;
 // カメラにアタッチして使います
 public class LookMove : MonoBehaviour
 {
-    private float x_sensitivity = 150f;
-    private float y_sensitivity = 100f;
+    [SerializeField] private float x_sensitivity = 150f;
+    [SerializeField] private float y_sensitivity = 100f;
     Vector3 _targetPos;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);
     private GameObject m_camera;
@@ -18,6 +18,7 @@ public class LookMove : MonoBehaviour
     {
         _targetPos = transform.position + m_targetOffset;
         m_camera = transform.GetChild(0).gameObject;
+
     }
 
     // Update is called once per frame
