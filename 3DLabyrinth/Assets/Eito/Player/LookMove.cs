@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ƒJƒƒ‰‚ÉƒAƒ^ƒbƒ`‚µ‚Äg‚¢‚Ü‚·
+// ã‚«ãƒ¡ãƒ©ã«ã‚¢ã‚¿ãƒƒãƒã—ã¦ä½¿ã„ã¾ã™
 public class LookMove : MonoBehaviour
 {
-    [SerializeField] private float x_sensitivity = 150f;
-    [SerializeField] private float y_sensitivity = 100f;
+    private float x_sensitivity = 100f;
+    private float y_sensitivity = 100f;
     Vector3 _targetPos;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);
     private GameObject m_camera;
@@ -33,7 +33,7 @@ public class LookMove : MonoBehaviour
 
         float angle = Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right);
 
-        // ƒJƒƒ‰‚ÌŒü‚«‚Ì§ŒÀ
+        // ã‚«ãƒ¡ãƒ©ã®å‘ãã®åˆ¶é™
         if (angle > 80)
         {
             if (m_yRotate > 0)
@@ -51,22 +51,22 @@ public class LookMove : MonoBehaviour
             //Debug.Log("aaa");
         }
 
-        // ƒNƒI[ƒ^ƒjƒIƒ“g‚¤
+        // ã‚¯ã‚ªãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½¿ã†
         Quaternion quaternionX = Quaternion.AngleAxis(m_xRotate * Time.fixedDeltaTime, Vector3.up);
-        // ©g‚ÌŒü‚«‚É‡‚í‚¹‚Äã‰º‚Ì‹“_ˆÚ“®‚Ì²‚Í•Ï‚¦‚È‚¢‚Æ‚¢‚¯‚È‚¢‚Á‚Û‚¢
+        // è‡ªèº«ã®å‘ãã«åˆã‚ã›ã¦ä¸Šä¸‹ã®è¦–ç‚¹ç§»å‹•ã®è»¸ã¯å¤‰ãˆãªã„ã¨ã„ã‘ãªã„ã£ã½ã„
         Quaternion quaternionY = Quaternion.AngleAxis(m_yRotate * Time.fixedDeltaTime, transform.right);
 
         m_targetOffset = quaternionX * m_targetOffset;
         m_targetOffset = quaternionY * m_targetOffset;
-        // ‚ ‚ÆƒvƒŒƒCƒ„[‚à‰ñ“]
+        // ã‚ã¨ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚‚å›è»¢
         transform.rotation *= quaternionX;
 
-        // ŒvZŒ‹‰Ê‚ğƒ^[ƒQƒbƒg‚É”½‰f
+        // è¨ˆç®—çµæœã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«åæ˜ 
         _targetPos = transform.position + m_targetOffset;
 
         //Debug.Log(_targetPos);
 
-        // Unity‚É
+        // Unityã«
         m_camera.transform.LookAt(_targetPos);
     }
 }
