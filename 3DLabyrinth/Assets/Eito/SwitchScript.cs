@@ -21,7 +21,7 @@ public class SwitchScript : MonoBehaviour
             if (transform.position.y <= buttomY )
             {
                 door.isOpen = true;
-                enabled = false; // 何度もisOpen = true にする処理が実行されないための対策
+             // enabled = false; // 何度もisOpen = true にする処理が実行されないための対策
             }
         }
     }
