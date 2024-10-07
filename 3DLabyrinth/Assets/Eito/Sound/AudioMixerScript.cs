@@ -11,7 +11,7 @@ public class AudioMixerScript : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider seSlider;
-    private float setDecibel;
+    //private float setDecibel;
    
     // Start is called before the first frame update
     void Start()
