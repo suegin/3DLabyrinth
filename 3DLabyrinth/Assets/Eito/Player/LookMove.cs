@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,6 @@ public class LookMove : MonoBehaviour
 {
     //public float x_sensitivity = 100f;
     //public float y_sensitivity = 100f;
-    //public Slider slider;
-    //float v;
     Vector3 _targetPos;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);
     private GameObject m_camera;
@@ -27,7 +26,7 @@ public class LookMove : MonoBehaviour
     void Update()
     {
         //m_xRotate = Input.GetAxis("Horizontal") * x_sensitivity;
-        //m_yRotate = Input.GetAxis("Vertical") * y_sensitivity;
+        //m_yRotate = Input.GetAxis("Vertical") * y_sensitivity; 
     }
 
     private void FixedUpdate()
