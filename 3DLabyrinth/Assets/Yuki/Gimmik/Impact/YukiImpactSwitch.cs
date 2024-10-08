@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class YukiImpactSwitch : MonoBehaviour, ISwitch
 {
@@ -8,6 +9,19 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
 
     [SerializeField]
     private List<ToggleState> m_objects = new List<ToggleState>(); 
+
+    // 自身のメッシュレンダラー
+    //private Renderer m_renderer;
+
+    [SerializeField]
+    private Material m_onMaterial;
+    [SerializeField]
+    private Material m_offMaterial;
+
+    private void Start()
+    {
+        //m_renderer = GetComponent<MeshRenderer>();
+    }
 
     // ボールが当たってもInteractを実行
     private void OnCollisionEnter(Collision collision)
@@ -26,8 +40,7 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
             obj.state = !obj.state;
         }
 
-        // 自身のグラフィックをちょっとアニメーションする
-
+        // 自身の色を変えるアニメーション
         // 後回し
     }
 }
