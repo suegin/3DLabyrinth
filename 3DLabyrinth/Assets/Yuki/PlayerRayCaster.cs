@@ -10,8 +10,7 @@ public class PlayerRayCaster : MonoBehaviour
     private Color m_gray = new Color(0.8f, 0.8f, 0.8f);
     private Vector3 m_grabPosition = new Vector3(0.5f, -0.2f, 0.7f);
     private const float kThrowPower = 15f;
-    // 入力状態
-    private bool m_isPush;
+    private const float kRayLength = 5f;
 
     // 自分の状態
     private bool m_isGrabbingBall = false;
@@ -29,17 +28,11 @@ public class PlayerRayCaster : MonoBehaviour
 
     private void Update()
     {
-        // 入力はUpdateでとる
-        m_isPush = Input.GetKeyDown("joystick button 0");
-    }
-
-    void FixedUpdate()
-    {
         // オブジェクトを見る
         Ray();
 
         // 入力が無ければ早期return 
-        if (!m_isPush) return;
+        if (!Input.GetKeyDown("joystick button 0")) return;
 
         // 目の前にスイッチがある
         if (isCatchedSwitchCollider)
@@ -64,7 +57,8 @@ public class PlayerRayCaster : MonoBehaviour
 
     private void Ray()
     {
-        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out m_raycastHit, 10);
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward),
+            out m_raycastHit, kRayLength);
 
         // まず対象はないとして考える
         isCatchedBallCollider = false;
@@ -121,7 +115,8 @@ public class PlayerRayCaster : MonoBehaviour
     private void PressSwitch()
     {
         // レイ上のスイッチに押される命令を出すだけ
+        // インターフェースはGetComponentできるのか
         m_raycastHit.collider.gameObject
-            .GetComponent<YukiSwitchController>().Interect();
+            .GetComponent<ISwitch>().Interact();
     }
 }
