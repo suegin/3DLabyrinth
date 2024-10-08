@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc4ccf6d96cefa4daef97a06e73228b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCatchedBallCollider: 0
+  isCatchedSwitchCollider: 0
 --- !u!1 &9143090636605625329
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,8 +251,8 @@ Rigidbody:
   m_GameObject: {fileID: 9143090636605625329}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0.5
-  m_AngularDrag: 0.1
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

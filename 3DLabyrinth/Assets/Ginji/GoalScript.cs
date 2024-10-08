@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GoalScript : MonoBehaviour
 {
-    public FadeOut fadeOut;
+    [SerializeField]
+    private FadeOut fadeOut;
     private void Start()
     {
         
@@ -26,6 +27,7 @@ public class GoalScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             fadeOut.ChangeScene();
+            Debug.Log("a");
         }
     }
 }
