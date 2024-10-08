@@ -6,8 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     // ˆÚ“®‚·‚é
 
-    private float x_sensitivity = 10f;
-    private float y_sensitivity = 10f;
+    private float x_sensitivity = 20f;
+    private float y_sensitivity = 20f;
 
     private float m_xMove = 0;
     private float m_zMove = 0;

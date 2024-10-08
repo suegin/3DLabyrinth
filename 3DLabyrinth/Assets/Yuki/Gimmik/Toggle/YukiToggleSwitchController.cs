@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YukiSwitchController : MonoBehaviour
+public class YukiToggleSwitchController : MonoBehaviour, ISwitch
 {
+    // このスイッチは、動かす対象がこれのオンオフ状態を見て動く
+
     // スイッチ(自分)がオンなのか
     public bool isOn { get; private set; } = false;
 
@@ -12,7 +14,9 @@ public class YukiSwitchController : MonoBehaviour
 
     // エディタでオッケー
     [SerializeField]
-    private Material[] m_materials = new Material[2];
+    private Material m_offMaterial;
+    [SerializeField]
+    private Material m_onMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +25,7 @@ public class YukiSwitchController : MonoBehaviour
         ChangeSwitchState(isOn);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Interect()
+    public void Interact()
     {
         // 状態フラグを反転する
         isOn = !isOn;
@@ -41,13 +39,22 @@ public class YukiSwitchController : MonoBehaviour
         {
             // オンの時の状態
             transform.localPosition = Vector3.zero;
-            m_meshRenderer.material = m_materials[0];
+            m_meshRenderer.material = m_onMaterial;
         }
         else
         {
             // オフの時の状態
             transform.localPosition = new Vector3(0, 2, 0);
-            m_meshRenderer.material = m_materials[1];
+            m_meshRenderer.material = m_offMaterial;
+        }
+    }
+
+    // ボールでスイッチオン
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            Interact();
         }
     }
 }
