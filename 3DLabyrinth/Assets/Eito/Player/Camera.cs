@@ -14,15 +14,14 @@ public class Camera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // Horizontal
-       // Vertical
+     
     }
 
     // Update is called once per frame
     void Update()
     {
-        //m_xRotate = Input.GetAxis("Horizontal") * x_sensitivity * v;
-        //m_yRotate = Input.GetAxis("Vertical") * y_sensitivity * v;
-        //v = slider.value;
+        m_xRotate = Input.GetAxis("Horizontal") * x_sensitivity * v;
+        m_yRotate = Input.GetAxis("Vertical") * y_sensitivity * v;
+        v = slider.value;
     }
 }
