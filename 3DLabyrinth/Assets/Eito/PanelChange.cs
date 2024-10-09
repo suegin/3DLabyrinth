@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PanelChange : MonoBehaviour
@@ -10,13 +12,25 @@ public class PanelChange : MonoBehaviour
     public GameObject cameraPanel; // X軸、Y軸のカメラ感度設定
     public GameObject titleSceneView;
 
+    // コントローラをフォーカスするためのもの
+    private EventSystem m_eventSystem;
+
+    private void FocusButton()
+    {
+        // UI切り替え時にこれを実行すればいい感じにフォーカスされる
+        m_eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("FirstSelectedButton"));
+    }
+
     // true:表示　false:非表示
     void Start()
     {
+        m_eventSystem = EventSystem.current;
+
         mainPanel.SetActive(false); 
         soundPanel.SetActive(false);
         cameraPanel.SetActive(false);
         titleSceneView.SetActive(true);
+        FocusButton();
     }
 
     public void MainView()
@@ -25,6 +39,7 @@ public class PanelChange : MonoBehaviour
         soundPanel.SetActive(false);
         cameraPanel.SetActive(false);
         titleSceneView.SetActive(false);
+        FocusButton(); 
     }
 
     public void SoundView()
@@ -33,6 +48,7 @@ public class PanelChange : MonoBehaviour
         soundPanel.SetActive(true);
         cameraPanel.SetActive(false);
         titleSceneView.SetActive(false);
+        FocusButton();
     }
    
     public void CameraView()
@@ -41,6 +57,7 @@ public class PanelChange : MonoBehaviour
         soundPanel.SetActive(false);
         cameraPanel.SetActive(true);
         titleSceneView.SetActive(false);
+        FocusButton();
     }
 
     public void OnClickBack()
@@ -48,5 +65,6 @@ public class PanelChange : MonoBehaviour
         mainPanel.SetActive(false);
         soundPanel.SetActive(false);
         titleSceneView.SetActive(true);
+        FocusButton();
     }
 }

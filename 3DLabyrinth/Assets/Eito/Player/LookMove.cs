@@ -56,7 +56,7 @@ public class LookMove : MonoBehaviour
         // クオータニオン使う
         Quaternion quaternionX = Quaternion.AngleAxis(m_xRotate * Time.fixedDeltaTime, Vector3.up);
         // 自身の向きに合わせて上下の視点移動の軸は変えないといけないっぽい
-        Quaternion quaternionY = Quaternion.AngleAxis(m_yRotate * Time.fixedDeltaTime, transform.right);
+        Quaternion quaternionY = Quaternion.AngleAxis(m_yRotate * Time.fixedDeltaTime, -transform.right);
 
         m_targetOffset = quaternionX * m_targetOffset;
         m_targetOffset = quaternionY * m_targetOffset;
