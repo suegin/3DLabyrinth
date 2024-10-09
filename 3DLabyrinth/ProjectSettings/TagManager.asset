@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Switch
+  - FirstSelectedButton
   - Target
   layers:
   - Default
