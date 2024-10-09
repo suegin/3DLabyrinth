@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class TestBall : MonoBehaviour
@@ -21,9 +22,9 @@ public class TestBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isActive && other.CompareTag("Ball"))　// ボールが当たったら
+        if (!door.isOpen && other.CompareTag("Ball"))　// ボールが当たったら
         {
-            isActive = true;
+           // isActive = true;
             door.isOpen = true;
         }
     }
