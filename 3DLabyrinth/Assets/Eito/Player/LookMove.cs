@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
-// カメラにアタッチして使います
+// プレイヤーにアタッチして使います
 public class LookMove : MonoBehaviour
 {
-    public float x_sensitivity = 100f;
-    public float y_sensitivity = 100f;
-    Vector3 _targetPos;
+    // カメラ感度はstaticになりました(拍手)
+
+    // 自分の周りに物が回っているようにふるまって、そこに自分を向ける　という仕組み
+    // だがより良い方法があったのでリファクタの時間が取れれば修正したい　
+    Vector3 m_targetPos;
     private Vector3 m_targetOffset = new Vector3(0, 0, 10);
     private GameObject m_camera;
 
@@ -18,22 +16,23 @@ public class LookMove : MonoBehaviour
 
     private void Start()
     {
-        _targetPos = transform.position + m_targetOffset;
+        m_targetPos = transform.position + m_targetOffset;
         m_camera = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_xRotate = Input.GetAxis("Horizontal") * x_sensitivity;
-        m_yRotate = Input.GetAxis("Vertical") * y_sensitivity;
+        // カメラ感度は別スクリプト
+        m_xRotate = Input.GetAxis("HorizontalRight") * GameSettingManager.s_xSensitivity;
+        m_yRotate = Input.GetAxis("VerticalRight") * -GameSettingManager.s_ySensitivity;
     }
 
     private void FixedUpdate()
     {
-        //Debug.Log(Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right));
 
-        float angle = Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, transform.right);
+        float angle = m_camera.transform.rotation.eulerAngles.x;
+        Debug.Log(angle);
 
         // カメラの向きの制限
         if (angle > 80)
@@ -64,11 +63,11 @@ public class LookMove : MonoBehaviour
         transform.rotation *= quaternionX;
 
         // 計算結果をターゲットに反映
-        _targetPos = transform.position + m_targetOffset;
+        m_targetPos = transform.position + m_targetOffset;
 
         //Debug.Log(_targetPos);
 
         // Unityに
-        m_camera.transform.LookAt(_targetPos);
+        m_camera.transform.LookAt(m_targetPos);
     }
 }
