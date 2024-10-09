@@ -23,8 +23,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_xMove = Input.GetAxis("HorizontalLeft") * x_sensitivity;
-        m_zMove = Input.GetAxis("VerticalLeft") * y_sensitivity * -1;
+        m_xMove = Input.GetAxis("Horizontal") * x_sensitivity;
+        m_zMove = Input.GetAxis("Vertical") * y_sensitivity;
     }
 
     private void FixedUpdate()
