@@ -14,6 +14,8 @@ public class LookMove : MonoBehaviour
     private float m_xRotate;
     private float m_yRotate;
 
+    public static bool s_canLookMove = true;
+
     private void Start()
     {
         m_targetPos = transform.position + m_targetOffset;
@@ -30,9 +32,11 @@ public class LookMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // 動けるかどうか
+        if (!s_canLookMove) return;
 
         float angle = Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, -transform.right);
-        Debug.Log(angle);
+        //Debug.Log(angle);
 
         // カメラの向きの制限
         if (angle > 80)

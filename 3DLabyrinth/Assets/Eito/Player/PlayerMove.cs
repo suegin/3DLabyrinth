@@ -14,6 +14,8 @@ public class PlayerMove : MonoBehaviour
 
     private Rigidbody m_rigidbody;
 
+    public static bool s_canMove = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,9 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // ƒƒjƒ…[‚ªŠJ‚¢‚Ä‚¢‚½‚è‚µ‚Ä‚¢‚é‚Æ‚«‚É“®‚«‚ğ~‚ß‚½‚¢
+        if (!s_canMove) return;
+
         // ‚¢‚¢Š´‚¶‚É©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ğ‰ñ“]‚³‚¹‚½‚¢
         //Debug.Log(transform.eulerAngles);
         Vector3 power = new Vector3(m_xMove, 0, m_zMove);
