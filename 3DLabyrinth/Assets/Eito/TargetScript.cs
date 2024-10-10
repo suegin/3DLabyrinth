@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// ƒpƒlƒ‹‚ğ¶‰E‚ÉˆÚ“®‚³‚¹‚é‚¾‚¯
 public class TargetScript : MonoBehaviour
 {
     private Vector3 targetPos;
