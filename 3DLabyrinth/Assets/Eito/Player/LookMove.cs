@@ -31,7 +31,7 @@ public class LookMove : MonoBehaviour
     private void FixedUpdate()
     {
 
-        float angle = m_camera.transform.rotation.eulerAngles.x;
+        float angle = Vector3.SignedAngle(new Vector3(m_targetOffset.x, 0, m_targetOffset.z), m_targetOffset, -transform.right);
         Debug.Log(angle);
 
         // カメラの向きの制限
