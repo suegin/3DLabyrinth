@@ -22,10 +22,11 @@ public class TestBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!door.isOpen && other.CompareTag("Ball"))　// ボールが当たったら
+        if (other.CompareTag("Ball"))　// ボールが当たったら
         {
            // isActive = true;
             door.isOpen = true;
+            Debug.Log("Hit");
         }
     }
 }
