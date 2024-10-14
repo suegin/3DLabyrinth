@@ -8,6 +8,7 @@ TagManager:
   - Switch
   - FirstSelectedButton
   - Target
+  - RetryBoard
   layers:
   - Default
   - TransparentFX
