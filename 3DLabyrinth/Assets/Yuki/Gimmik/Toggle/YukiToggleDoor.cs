@@ -40,14 +40,15 @@ public class YukiToggleDoor : MonoBehaviour
 
     private bool CheckSwitches()
     {
-        // リストの全スイッチを見て一つでもオンなら恩を返す
+        // 10/15仕様変更
+        // リストの全スイッチを見て*すべて*オンならtrueを返す
         foreach(var sw in m_switches)
         {
-            if (sw.isOn)
+            if (!sw.isOn)
             {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }
