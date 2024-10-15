@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 37890929}
   - component: {fileID: 37890931}
   - component: {fileID: 37890930}
+  - component: {fileID: 37890932}
+  - component: {fileID: 37890933}
   m_Layer: 5
   m_Name: FadePanel
   m_TagString: Untagged
@@ -198,6 +200,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37890928}
   m_CullTransparentMesh: 1
+--- !u!114 &37890932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37890928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedf24d8fd6582342b33a56c01a9b1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &37890933
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37890928}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &506321915
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +593,7 @@ GameObject:
   - component: {fileID: 2057664814}
   - component: {fileID: 2057664813}
   - component: {fileID: 2057664815}
+  - component: {fileID: 2057664816}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -622,8 +649,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -702,6 +729,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfd5b570f7231d4fafc4b842a5e7474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &2057664816
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057664811}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

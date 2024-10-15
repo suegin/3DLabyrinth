@@ -9,6 +9,8 @@ public class YukiFadeManager : MonoBehaviour
 
     private static CanvasGroup m_fadePanel;
 
+    private const int kApplicationFrameRate = 60;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class YukiFadeManager : MonoBehaviour
     public static IEnumerator FadeIn(float time)
     {
         // time秒でアルファが1減るように
-        float alphaValue = 1 / time; 
+        float alphaValue = 1.0f / kApplicationFrameRate / time; 
 
         // 透明度下げる
         while (m_fadePanel.alpha > 0)
@@ -31,9 +33,9 @@ public class YukiFadeManager : MonoBehaviour
     public static IEnumerator FadeOut(float time)
     {
         // time秒でアルファが1増えるように
-        float alphaValue = 1 / time;
+        float alphaValue = 1.0f / kApplicationFrameRate / time;
 
-        // 透明度下げる
+        // 透明度上げる
         while (m_fadePanel.alpha < 1)
         {
             m_fadePanel.alpha += alphaValue;

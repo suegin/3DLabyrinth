@@ -7,32 +7,30 @@ using UnityEngine.SceneManagement;
 
 // オープニングはこのスクリプトだけで完結させよ
 
-public class OpeningTextController : MonoBehaviour
+public class OpeningController : MonoBehaviour
 {
     // シーンが始まったらテキストを表示して
     // 一定時間たったらフェードして次のテキストを表示…をしたい
     // 一定時間立つ他、Aボタンを押しても次に進む　
 
-    private const int kTextNum = 10;
     private string[] m_texts =
     {
         "aaa",
         "iii"
     };
 
-    private TextMeshProUGUI m_textComponent;
+    private CanvasGroup m_canvasGroup;
+    private TextMeshProUGUI m_text;
     // フェードインアウトの時間
-    private const float kTextFadeTime = 1.0f;
+    private const float kTextFadeTime = 1.5f;
     // テキスト送りの間隔
     private const float kNextTextTime = 3.0f;
+    // 想定されているフレームレート
+    private const int kFrameRate = 60;
     // タイマー
     private float m_timer;
     // 今のテキストの通し番号
     private int m_textNum = 0;
-
-    // アルファ調節用
-    private Color m_alpha = new Color(0.0f, 0.0f, 0.0f, 1.0f/60);
-    private Color m_clearBlack = new Color(1, 1, 1, 0);
 
     // 有効かどうか
     private bool m_enabled = true;
@@ -41,8 +39,16 @@ public class OpeningTextController : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
-        m_textComponent = GetComponent<TextMeshProUGUI>();
+        // いろいろ取得
+        m_canvasGroup = GetComponent<CanvasGroup>();
+        m_text = GetComponent<TextMeshProUGUI>();
         SetText();
+
+        // 配列の要素数は1から数える
+        //Debug.Log(m_texts.Length);
+
+        // フェード
+        StartCoroutine(YukiFadeManager.FadeIn(1.0f));
     }
 
     // Update is called once per frame
@@ -55,37 +61,42 @@ public class OpeningTextController : MonoBehaviour
         m_timer += Time.deltaTime;
 
         // ここで一元管理して入力とる
-        bool pushAButton = Input.GetKeyDown(KeyCode.A);
+        bool pushedAnyButton = Input.anyKeyDown;
 
         if (m_timer < kTextFadeTime)
         {
+            //Debug.Log($"{m_texts[m_textNum]}, フェードイン中");
             // フェードインの段階
-            m_textComponent.color += m_alpha;
+            // 割り算御免
+            m_canvasGroup.alpha += Time.deltaTime / kTextFadeTime;
             // ここで入力があったら、強制的にタイマーを1.0fに
-            if (pushAButton)
+            if (pushedAnyButton)
             {
                 m_timer = kTextFadeTime;
-                m_textComponent.color = Color.black;
+                m_canvasGroup.alpha = 1.0f;
             }
         }
         else if (m_timer < kTextFadeTime + kNextTextTime)
         {
+            //Debug.Log($"{m_texts[m_textNum]}, 待機");
             // 完全に不透明で待機する時間
             // 入力でフェードアウトに移行
-            if (pushAButton)
+            if (pushedAnyButton)
             {
                 m_timer = kTextFadeTime + kNextTextTime;
             }
         }
         else if (m_timer < kTextFadeTime * 2 + kNextTextTime)
         {
+            //Debug.Log($"{m_texts[m_textNum]}, アウト");
             // フェードアウト
-            m_textComponent.color -= m_alpha;
+            // 割り算御免
+            m_canvasGroup.alpha -= Time.deltaTime / kTextFadeTime;
             // 入力あったら次へ
-            if (pushAButton)
+            if (pushedAnyButton)
             {
                 m_timer = kTextFadeTime * 2 + kNextTextTime;
-                m_textComponent.color = m_clearBlack;
+                m_canvasGroup.alpha = 0;
             }
         }
         else
@@ -94,24 +105,29 @@ public class OpeningTextController : MonoBehaviour
             m_timer = 0;
             m_textNum++;
             // 最後の文字まで言ったら終了。
-            if (m_textNum > kTextNum)
+            if (m_textNum >= m_texts.Length)
             {
-                End();
+                StartCoroutine(End());
                 m_enabled = false;
             }
-            SetText();
+            else
+            {
+                SetText();
+            }
         }
     }
 
     private void SetText()
     {
         // 現在の通し番号に応じてテキストを切り替える
-        m_textComponent.text = m_texts[m_textNum];
+        m_text.text = m_texts[m_textNum];
     }
 
     private IEnumerator End()
     {
         // フェードを待つ
         yield return YukiFadeManager.FadeOut(1.0f);
+        // シーンをロード
+        SceneManager.LoadScene("LabyrinthTest");
     }
 }
