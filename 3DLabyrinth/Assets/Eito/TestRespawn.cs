@@ -28,7 +28,7 @@ public class TestRespawn : MonoBehaviour
         {
             // 接触したオブジェクトを表示
             other.gameObject.SetActive(true);
-            other.gameObject.transform.position = new Vector3(2, 0, -6); // スタート位置に戻す
+            other.gameObject.transform.position = new Vector3(-9, 1, -5); // スタート位置に戻す
         }
     }
 }

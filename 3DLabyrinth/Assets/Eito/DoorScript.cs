@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     float defaultY;     // 扉の初期のY座標
-    float openY = 5f;   // 扉のオープン時のY座標
+    float openY = 10f;   // 扉のオープン時のY座標
     float speed = 1f;   // 扉の開閉のスピード
     public bool isOpen; // 扉を開けるか閉めるかのフラグ
 
