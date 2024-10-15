@@ -1,6 +1,8 @@
-using System.Collections.Generic;
+// IEnumeratorが複数存在したので、こっちのほうがわかりやすいかなーっと　思いました
+using ListCollection = System.Collections.Generic;
+using Coroutine = System.Collections;
 using UnityEngine;
-using DG.Tweening;
+using System.Runtime.CompilerServices;
 
 public class YukiImpactSwitch : MonoBehaviour, ISwitch
 {
@@ -8,24 +10,30 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
     // これをインパクトスイッチと呼ぼう　
 
     [SerializeField]
-    private List<ToggleState> m_objects = new List<ToggleState>(); 
+    private ListCollection.List<ToggleState> m_objects = new ListCollection.List<ToggleState>();
 
     // 自身のメッシュレンダラー
-    //private Renderer m_renderer;
+    private Renderer m_renderer;
 
-    [SerializeField]
     private Material m_onMaterial;
-    [SerializeField]
     private Material m_offMaterial;
+
+    // 操作できるかどうか
+    public bool isActive = true;
 
     private void Start()
     {
-        //m_renderer = GetComponent<MeshRenderer>();
+        m_renderer = GetComponent<MeshRenderer>();
+        // これはめんどいのでロード
+        m_onMaterial = (Material)Resources.Load("DarkGreen");
+        m_offMaterial = (Material)Resources.Load("Green");
     }
 
     // ボールが当たってもInteractを実行
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isActive) return;
+
         if (collision.gameObject.tag == "Ball")
         {
             Interact();
@@ -34,13 +42,25 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
 
     public void Interact()
     {
+        // アクティブなら
+        if (!isActive) return;
+
         // このスイッチに指定されたすべてのオブジェクトのステートを反転
         foreach (var obj in m_objects)
         {
             obj.state = !obj.state;
         }
 
-        // 自身の色を変えるアニメーション
-        // 後回し
+        // 色をじわっと変えて、元に戻す
+        // やっぱりDOTWeenではできないのでコルーチンで
+        StartCoroutine(ChangeColor(0.5f));
+    }
+
+    private Coroutine.IEnumerator ChangeColor(float time)
+    {
+        // 色を変える
+        m_renderer.material = m_onMaterial;
+        yield return new WaitForSeconds(time);
+        m_renderer.material = m_offMaterial;
     }
 }
