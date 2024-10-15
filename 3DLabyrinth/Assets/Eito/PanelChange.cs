@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class PanelChange : MonoBehaviour
 {
-    public GameObject mainPanel;   // サウンド、カメラ、クレジット、戻るボタン
-    public GameObject soundPanel;  // サウンド設定
-    public GameObject cameraPanel; // X軸、Y軸のカメラ感度設定
+    public GameObject mainView;   // サウンド、カメラ、クレジット、戻るボタン
+    public GameObject soundView;  // サウンド設定
+    public GameObject cameraView; // X軸、Y軸のカメラ感度設定
+    public GameObject creditView;
     public GameObject titleSceneView;
 
     // コントローラをフォーカスするためのもの
@@ -26,44 +27,57 @@ public class PanelChange : MonoBehaviour
     {
         m_eventSystem = EventSystem.current;
 
-        mainPanel.SetActive(false); 
-        soundPanel.SetActive(false);
-        cameraPanel.SetActive(false);
+        mainView.SetActive(false); 
+        soundView.SetActive(false);
+        cameraView.SetActive(false);
+        creditView.SetActive(false);
         titleSceneView.SetActive(true);
         FocusButton();
     }
 
     public void MainView()
     {
-        mainPanel.SetActive(true);
-        soundPanel.SetActive(false);
-        cameraPanel.SetActive(false);
+        mainView.SetActive(true);
+        soundView.SetActive(false);
+        cameraView.SetActive(false);
+        creditView.SetActive(false);
         titleSceneView.SetActive(false);
         FocusButton(); 
     }
 
     public void SoundView()
     {
-        mainPanel.SetActive(false);
-        soundPanel.SetActive(true);
-        cameraPanel.SetActive(false);
+        mainView.SetActive(false);
+        soundView.SetActive(true);
+        cameraView.SetActive(false);
+        creditView.SetActive(false);
         titleSceneView.SetActive(false);
         FocusButton();
     }
    
     public void CameraView()
     {
-        mainPanel.SetActive(false);
-        soundPanel.SetActive(false);
-        cameraPanel.SetActive(true);
+        mainView.SetActive(false);
+        soundView.SetActive(false);
+        cameraView.SetActive(true);
+        creditView.SetActive(false);
+        titleSceneView.SetActive(false);
+        FocusButton();
+    }
+    public void CreditView()
+    {
+        mainView.SetActive(false);
+        soundView.SetActive(false);
+        cameraView.SetActive(false);
+        creditView.SetActive(true);
         titleSceneView.SetActive(false);
         FocusButton();
     }
 
     public void OnClickBack()
     {
-        mainPanel.SetActive(false);
-        soundPanel.SetActive(false);
+        mainView.SetActive(false);
+        soundView.SetActive(false);
         titleSceneView.SetActive(true);
         FocusButton();
     }
