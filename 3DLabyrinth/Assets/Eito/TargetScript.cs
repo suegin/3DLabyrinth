@@ -16,6 +16,6 @@ public class TargetScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(Mathf.Sin(Time.time) * 5.0f + targetPos.x, targetPos.y, targetPos.z); // X²‚Ì¶‰EˆÚ“®
+        transform.position = new Vector3(targetPos.x, targetPos.y, Mathf.Sin(Time.time) * 5.0f + targetPos.z); // X²‚Ì¶‰EˆÚ“®
     }
 }
