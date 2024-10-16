@@ -15,8 +15,11 @@ public class OpeningController : MonoBehaviour
 
     private string[] m_texts =
     {
-        "aaa",
-        "iii"
+        "テスト",
+        "オープニングの文字を表示できます",
+        "何行でも書けます",
+        "今は終了時にシーンをロードするけど",
+        "デリゲートで汎用性を高められると思う"
     };
 
     private CanvasGroup m_canvasGroup;
@@ -25,8 +28,6 @@ public class OpeningController : MonoBehaviour
     private const float kTextFadeTime = 1.5f;
     // テキスト送りの間隔
     private const float kNextTextTime = 3.0f;
-    // 想定されているフレームレート
-    private const int kFrameRate = 60;
     // タイマー
     private float m_timer;
     // 今のテキストの通し番号
