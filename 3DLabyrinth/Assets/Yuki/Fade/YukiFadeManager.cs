@@ -20,12 +20,12 @@ public class YukiFadeManager : MonoBehaviour
     public static IEnumerator FadeIn(float time)
     {
         // time秒でアルファが1減るように
-        float alphaValue = 1.0f / kApplicationFrameRate / time; 
+        float alphaValue = 1.0f / time; 
 
         // 透明度下げる
         while (m_fadePanel.alpha > 0)
         {
-            m_fadePanel.alpha -= alphaValue;
+            m_fadePanel.alpha -= alphaValue * Time.deltaTime;
             yield return null;
         }
     }
@@ -33,12 +33,12 @@ public class YukiFadeManager : MonoBehaviour
     public static IEnumerator FadeOut(float time)
     {
         // time秒でアルファが1増えるように
-        float alphaValue = 1.0f / kApplicationFrameRate / time;
+        float alphaValue = 1.0f / time;
 
         // 透明度上げる
         while (m_fadePanel.alpha < 1)
         {
-            m_fadePanel.alpha += alphaValue;
+            m_fadePanel.alpha += alphaValue * Time.deltaTime;
             yield return null;
         }
     }

@@ -17,6 +17,9 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
     private Material m_offMaterial;
     [SerializeField]
     private Material m_onMaterial;
+    // 一度オンにしたら、オフにできるか
+    [SerializeField]
+    private bool m_canTurnOff = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
 
     public void Interact()
     {
+        if (isOn && !m_canTurnOff) return;
+
         // 状態フラグを反転する
         isOn = !isOn;
         ChangeSwitchState(isOn);

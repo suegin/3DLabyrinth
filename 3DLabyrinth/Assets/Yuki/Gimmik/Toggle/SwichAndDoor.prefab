@@ -34,8 +34,82 @@ Transform:
   - {fileID: 9070827863288272593}
   - {fileID: 8550507762557039914}
   - {fileID: 816939555289734599}
+  - {fileID: 4632156324137614142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1489780992008039952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3441030268298195038}
+    m_Modifications:
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.582645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.808736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063927826189503799, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+      propertyPath: m_Name
+      value: SwitchBase5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+--- !u!114 &1462187407332975267 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 64871565957074099, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+  m_PrefabInstance: {fileID: 1489780992008039952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2005baa496034904aa4f09a1028ae414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &4632156324137614142 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6117148648658277678, guid: 3adc53a2855a0684f8ab8d43be259a6d, type: 3}
+  m_PrefabInstance: {fileID: 1489780992008039952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2471908610631213060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,7 +339,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2224985405470046582, guid: 4dabc2e2ec36a704ca91842a39c7bc17, type: 3}
       propertyPath: m_switches.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2224985405470046582, guid: 4dabc2e2ec36a704ca91842a39c7bc17, type: 3}
       propertyPath: m_switches.Array.data[0]
@@ -283,6 +357,10 @@ PrefabInstance:
       propertyPath: m_switches.Array.data[3]
       value: 
       objectReference: {fileID: 2498235075641093303}
+    - target: {fileID: 2224985405470046582, guid: 4dabc2e2ec36a704ca91842a39c7bc17, type: 3}
+      propertyPath: m_switches.Array.data[4]
+      value: 
+      objectReference: {fileID: 1462187407332975267}
     - target: {fileID: 4883431159080158948, guid: 4dabc2e2ec36a704ca91842a39c7bc17, type: 3}
       propertyPath: m_Name
       value: ToggleDoor
