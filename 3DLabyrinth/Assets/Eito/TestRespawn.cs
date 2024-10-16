@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TestRespawn : MonoBehaviour
 {
+    private GameObject m_RespawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-     
+        m_RespawnPoint = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class TestRespawn : MonoBehaviour
         {
             // 接触したオブジェクトを表示
             other.gameObject.SetActive(true);
-            other.gameObject.transform.position = new Vector3(-9, 1, -5); // スタート位置に戻す
+            other.gameObject.transform.position = m_RespawnPoint.transform.position; // スタート位置に戻す
         }
     }
 }
