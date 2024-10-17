@@ -19,6 +19,24 @@ public class PanelChangeInGameScene : MonoBehaviour
         m_eventSystem = EventSystem.current;
     }
 
+    private void Update()
+    {
+        // UIが開いてて、
+        // コントローラの選択が外れていて、
+        // コントローラの入力を受け取ったとき、
+        // FocusButtonを実行する　
+        if (!mainPanel.activeSelf  ||
+            !soundPanel.activeSelf ||
+            !cameraPanel.activeSelf) return;
+
+        if (m_eventSystem.currentSelectedGameObject != null) return;
+
+        if (Input.anyKey)
+        {
+            FocusButton();
+        }
+    }
+
     private void FocusButton()
     {
         // UI切り替え時にこれを実行すればいい感じにフォーカスされる
