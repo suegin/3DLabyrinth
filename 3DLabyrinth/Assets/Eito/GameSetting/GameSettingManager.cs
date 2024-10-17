@@ -42,19 +42,28 @@ public class GameSettingManager : MonoBehaviour
     // スライダーがアクセスする関数
     public void ChangeMasterVolume(float value)
     {
-        m_audioMixer.SetFloat("Master_Volume", value);
+        // デシベルに適した値に調整
+        float decibels = Mathf.Clamp(Mathf.Log10(value) * 20, -80, 0);
+
+        m_audioMixer.SetFloat("Master_Volume", decibels);
         s_masterVolume = value;
     }
 
     public void ChangeBGMVolume(float value)
     {
-        m_audioMixer.SetFloat("BGM_Volume", value);
+        // デシベルに適した値に調整
+        float decibels = Mathf.Clamp(Mathf.Log10(value) * 20, -80, 0);
+
+        m_audioMixer.SetFloat("BGM_Volume", decibels);
         s_bgmVolume = value;
     }
 
     public void ChangeSEVolume(float value)
     {
-        m_audioMixer.SetFloat("SE_Volume", value);
+        // デシベルに適した値に調整
+        float decibels = Mathf.Clamp(Mathf.Log10(value) * 20, -80, 0);
+
+        m_audioMixer.SetFloat("SE_Volume", decibels);
         s_seVolume = value;
     }
 

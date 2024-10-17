@@ -21,20 +21,25 @@ public class PanelChangeInGameScene : MonoBehaviour
 
     private void Update()
     {
-        // UIが開いてて、
-        // コントローラの選択が外れていて、
-        // コントローラの入力を受け取ったとき、
-        // FocusButtonを実行する　
-        if (!mainPanel.activeSelf  ||
-            !soundPanel.activeSelf ||
-            !cameraPanel.activeSelf) return;
+        //// UIが開いてて、
+        //// コントローラの選択が外れていて、
+        //// コントローラの入力を受け取ったとき、
+        //// FocusButtonを実行する　
+        //if (!mainPanel.activeSelf  &&
+        //    !soundPanel.activeSelf &&
+        //    !cameraPanel.activeSelf) return;
 
-        if (m_eventSystem.currentSelectedGameObject != null) return;
+        //Debug.Log("よお");
 
-        if (Input.anyKey)
-        {
-            FocusButton();
-        }
+        //if (m_eventSystem.currentSelectedGameObject != null) return;
+
+        //Debug.Log("フォーカス無い");
+
+        //if (Input.anyKeyDown)
+        //{
+        //    Debug.Log("通ったよ");
+        //    FocusButton();
+        //}
     }
 
     private void FocusButton()
