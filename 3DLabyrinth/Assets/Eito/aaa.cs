@@ -16,5 +16,4 @@ public class aaa : MonoBehaviour
         
     }
 
-    public void OnC
 }
