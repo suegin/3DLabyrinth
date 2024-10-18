@@ -1,26 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CreditScript : MonoBehaviour
 {
     private Vector3 staffrollPosition;
+    private EventSystem m_eventSystem;
     public RectTransform rectTransform; // スクロールしたいものを入れる
     public float endPos; // スクロールが終わる際のY座標の指定
+    public GameObject creditView;
+    public GameObject titleSceneView;
 
     // Start is called before the first frame update
     void Start()
     {
         staffrollPosition = rectTransform.anchoredPosition;
+        m_eventSystem = EventSystem.current;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKey)
+        {
+            FocusButton();
+        }
+
         // Aボタンを押すとスクロールスピードが上がる
         if (Input.GetKey("joystick button 0"))　
         {
             staffrollPosition.y += 1f;
+        }
+
+        if (Input.GetKey("joystick button 1"))
+        {
+            creditView.SetActive(false);
+            titleSceneView.SetActive(true);
+            FocusButton();
         }
 
         // +Y座標にスクロールする
@@ -29,5 +46,11 @@ public class CreditScript : MonoBehaviour
             staffrollPosition.y += 0.3f;
             rectTransform.anchoredPosition = staffrollPosition;
         }
+    }
+
+    private void FocusButton()
+    {
+        // UI切り替え時にこれを実行すればいい感じにフォーカスされる
+        m_eventSystem.SetSelectedGameObject(GameObject.FindGameObjectWithTag("FirstSelectedButton"));
     }
 }

@@ -8,6 +8,8 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
 
     // スイッチ(自分)がオンなのか
     public bool isOn { get; private set; } = false;
+    public AudioClip switchPush;
+    private AudioSource audioSource;
 
     // 自分のメッシュレンダラー
     private MeshRenderer m_meshRenderer;
@@ -26,6 +28,15 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
     {
         m_meshRenderer = GetComponent<MeshRenderer>();
         ChangeSwitchState(isOn);
+        audioSource = GetComponent<AudioSource>();  
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown("joystick button 0")) 
+        {
+           // audioSource = Player.OneShot(switchPush); 
+        } 
     }
 
     public void Interact()
