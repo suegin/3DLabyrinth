@@ -28,15 +28,22 @@ public class GameSettingManager : MonoBehaviour
         s_bgmVolume = PlayerPrefs.GetFloat("BGM", 0);
         s_seVolume = PlayerPrefs.GetFloat("SE", 0);
 
+        Debug.Log(s_masterVolume);
+
         s_xSensitivity = PlayerPrefs.GetFloat("CameraX", 100);
         s_ySensitivity = PlayerPrefs.GetFloat("CameraY", 100);
 
         // 音量の各要素を反映
-        m_audioMixer.SetFloat("Master_Volume", s_masterVolume);
-        m_audioMixer.SetFloat("BGM_Volume", s_bgmVolume);
-        m_audioMixer.SetFloat("SE_Volume", s_seVolume);
+        m_audioMixer.SetFloat("Master_Volume", Decibels(s_masterVolume));
+        m_audioMixer.SetFloat("BGM_Volume", Decibels(s_bgmVolume));
+        m_audioMixer.SetFloat("SE_Volume", Decibels(s_seVolume));
 
         // カメラ感度はこのスクリプトの変数が本体なので反映とかはない
+    }
+
+    private float Decibels(float value)
+    {
+        return Mathf.Clamp(Mathf.Log10(value) * 20, -80, 0);
     }
 
     // スライダーがアクセスする関数
