@@ -17,6 +17,8 @@ public class PanelChangeInGameScene : MonoBehaviour
     [SerializeField]
     AudioClip m_cancelSE;
 
+    PlayerMove m_move;
+
     // コントローラをフォーカスするためのもの
     private EventSystem m_eventSystem;
 
@@ -25,6 +27,7 @@ public class PanelChangeInGameScene : MonoBehaviour
     {
         m_eventSystem = EventSystem.current;
         m_SEGenerator = GetComponent<AudioSource>();
+        m_move = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
     }
 
     private void Update()
@@ -56,14 +59,6 @@ public class PanelChangeInGameScene : MonoBehaviour
             // 同時にボタンを押していたらバグりそうなのでreturnしておく
             return;
         }
-
-        // もしBボタンが押されたらしかるべき対応をする
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 1"))
-        {
-            BackBeforeUI();
-            // 上に同じ　次に新しい操作が追加されるかもしれないからね
-            return;
-        }
     }
 
     public void ShowOption()
@@ -90,14 +85,14 @@ public class PanelChangeInGameScene : MonoBehaviour
     private void StopGame()
     {
         //Time.timeScale = 0;
-        PlayerMove.s_canMove = false;
+        m_move.Stop();
         LookMove.s_canLookMove = false;
     }
 
     private void ResumeGame()
     {
         //Time.timeScale = 1.0f;
-        PlayerMove.s_canMove = true;
+        m_move.Resume();
         LookMove.s_canLookMove = true;
     }
 

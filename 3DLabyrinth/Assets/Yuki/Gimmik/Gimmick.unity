@@ -228,7 +228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 203306403}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionButton, Assembly-CSharp
         m_MethodName: ShowOption
         m_Mode: 1
@@ -369,7 +369,6 @@ GameObject:
   - component: {fileID: 203306402}
   - component: {fileID: 203306401}
   - component: {fileID: 203306400}
-  - component: {fileID: 203306403}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -427,20 +426,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &203306403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203306399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3161897dfc99c849b40f4af818e542a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UI: {fileID: 712393353}
-  m_firstSerectedButton: {fileID: 1486158067}
 --- !u!1 &262664549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4484,6 +4469,9 @@ MonoBehaviour:
   mainPanel: {fileID: 712393353}
   soundPanel: {fileID: 1642618894}
   cameraPanel: {fileID: 1085486290}
+  m_submitSE: {fileID: 0}
+  m_cancelSE: {fileID: 0}
+  m_move: {fileID: 0}
 --- !u!114 &1857193075
 MonoBehaviour:
   m_ObjectHideFlags: 0

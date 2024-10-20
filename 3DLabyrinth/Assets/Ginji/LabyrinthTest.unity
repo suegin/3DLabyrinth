@@ -7979,6 +7979,7 @@ MonoBehaviour:
   cameraPanel: {fileID: 284671724}
   m_submitSE: {fileID: 8300000, guid: f5b56734db38e3645b42da322cb5bfe2, type: 3}
   m_cancelSE: {fileID: 8300000, guid: 1ad65582686060c43aeb52dc0f69d9e3, type: 3}
+  m_move: {fileID: 0}
 --- !u!82 &1604248071
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8619,24 +8620,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5141370182519659736, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_Drag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_Mass
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143090636605625329, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
