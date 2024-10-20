@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
 
 
     // private bool isRunning; // 移動しているかしていないかのフラグ
+    // private AudioSource audioSource;
 
 
     private Rigidbody m_rigidbody;
