@@ -6,11 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     // ˆÚ“®‚·‚é
 
-    private float m_moveSpeedX = 10f;
-    private float m_moveSpeedZ = 10f;
+    private float m_moveSpeed = 10f;
 
-    private float m_xMove = 0;
-    private float m_zMove = 0;
+    private Vector3 m_inputAxis;
 
     private Rigidbody m_rigidbody;
 
@@ -25,8 +23,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_xMove = Input.GetAxis("Horizontal") * m_moveSpeedX;
-        m_zMove = Input.GetAxis("Vertical") * m_moveSpeedZ;
+        m_inputAxis.x = Input.GetAxis("Horizontal");
+        m_inputAxis.z = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
@@ -35,8 +33,15 @@ public class PlayerMove : MonoBehaviour
         if (!s_canMove) return;
 
         // ‚¢‚¢Š´‚¶‚É©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ğ‰ñ“]‚³‚¹‚½‚¢
-        //Debug.Log(transform.eulerAngles);
-        Vector3 power = new Vector3(m_xMove, 0, m_zMove);
+        // “ü—Í‚ª1ˆÈã‚É‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é
+        if (m_inputAxis.sqrMagnitude > 1)
+        {
+            m_inputAxis.Normalize();
+        }
+        m_inputAxis *= m_moveSpeed;
+
+        // d—ÍˆÈŠO‚ğİ’è
+        Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
         m_rigidbody.velocity = power;
     }

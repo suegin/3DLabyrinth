@@ -28,7 +28,7 @@ public class GameSettingManager : MonoBehaviour
         s_bgmVolume = PlayerPrefs.GetFloat("BGM", 0);
         s_seVolume = PlayerPrefs.GetFloat("SE", 0);
 
-        Debug.Log(s_masterVolume);
+        //Debug.Log(s_masterVolume);
 
         s_xSensitivity = PlayerPrefs.GetFloat("CameraX", 100);
         s_ySensitivity = PlayerPrefs.GetFloat("CameraY", 100);
