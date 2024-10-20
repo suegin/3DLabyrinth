@@ -6,8 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     // ˆÚ“®‚·‚é
 
-    private float x_sensitivity = 20f;
-    private float y_sensitivity = 20f;
+    private float m_moveSpeedX = 10f;
+    private float m_moveSpeedZ = 10f;
 
     private float m_xMove = 0;
     private float m_zMove = 0;
@@ -25,8 +25,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_xMove = Input.GetAxis("Horizontal") * x_sensitivity;
-        m_zMove = Input.GetAxis("Vertical") * y_sensitivity;
+        m_xMove = Input.GetAxis("Horizontal") * m_moveSpeedX;
+        m_zMove = Input.GetAxis("Vertical") * m_moveSpeedZ;
     }
 
     private void FixedUpdate()
@@ -38,6 +38,6 @@ public class PlayerMove : MonoBehaviour
         //Debug.Log(transform.eulerAngles);
         Vector3 power = new Vector3(m_xMove, 0, m_zMove);
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
-        m_rigidbody.AddForce(power);
+        m_rigidbody.velocity = power;
     }
 }
