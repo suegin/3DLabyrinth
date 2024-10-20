@@ -53,6 +53,16 @@ public class PanelChangeInGameScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
         {
             ShowOption();
+            // 同時にボタンを押していたらバグりそうなのでreturnしておく
+            return;
+        }
+
+        // もしBボタンが押されたらしかるべき対応をする
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 1"))
+        {
+            BackBeforeUI();
+            // 上に同じ　次に新しい操作が追加されるかもしれないからね
+            return;
         }
     }
 
@@ -128,5 +138,19 @@ public class PanelChangeInGameScene : MonoBehaviour
     {
         m_SEGenerator.clip = se;
         m_SEGenerator.Play();
+    }
+
+    private void BackBeforeUI()
+    {
+        // 現在のUIの状態に応じて処理を変える
+        if (mainPanel.activeSelf)
+        {
+            // 流用しちゃえ
+            ShowOption();
+        }
+        else
+        {
+            OnClickBack();
+        }
     }
 }

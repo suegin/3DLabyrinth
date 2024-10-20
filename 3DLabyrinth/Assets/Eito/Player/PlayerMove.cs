@@ -30,7 +30,11 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         // ƒƒjƒ…[‚ªŠJ‚¢‚Ä‚¢‚½‚è‚µ‚Ä‚¢‚é‚Æ‚«‚É“®‚«‚ğ~‚ß‚½‚¢
-        if (!s_canMove) return;
+        if (!s_canMove)
+        {
+            m_rigidbody.velocity = Vector3.zero;
+            return;
+        }
 
         // ‚¢‚¢Š´‚¶‚É©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ğ‰ñ“]‚³‚¹‚½‚¢
         // “ü—Í‚ª1ˆÈã‚É‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é
