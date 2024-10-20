@@ -10,16 +10,23 @@ public class PlayerMove : MonoBehaviour
     private float y_sensitivity = 20f;
 
     private float m_xMove = 0;
-    private float m_zMove = 0;
+    private float m_zMove = 0;@
+
+   // private bool isRunning; // ˆÚ“®‚µ‚Ä‚¢‚é‚©‚µ‚Ä‚¢‚È‚¢‚©‚Ìƒtƒ‰ƒO
+   // private AudioSource audioSource;
 
     private Rigidbody m_rigidbody;
 
     public static bool s_canMove = true;
 
+   // public AudioClip footStep; // —¬‚·‘«‰¹‚Ìİ’è
+
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+       // audioSource = GetComponent<AudioSource>();
+       // isRunning = false;
     }
 
     // Update is called once per frame

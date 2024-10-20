@@ -35,7 +35,7 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
     {
         if(Input.GetKeyDown("joystick button 0")) 
         {
-           // audioSource = Player.OneShot(switchPush); 
+            audioSource.PlayOneShot(switchPush); 
         } 
     }
 
