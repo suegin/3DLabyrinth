@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    // à⁄ìÆÇ∑ÇÈ
+    // ÁßªÂãï„Åô„Çã
 
-    private float x_sensitivity = 20f;
-    private float y_sensitivity = 20f;
+    private float m_moveSpeed = 10f;
 
-    private float m_xMove = 0;
-    private float m_zMove = 0;Å@
 
-   // private bool isRunning; // à⁄ìÆÇµÇƒÇ¢ÇÈÇ©ÇµÇƒÇ¢Ç»Ç¢Ç©ÇÃÉtÉâÉO
+
+   // private bool isRunning; // ÁßªÂãï„Åó„Å¶„ÅÑ„Çã„Åã„Åó„Å¶„ÅÑ„Å™„ÅÑ„Åã„ÅÆ„Éï„É©„Ç∞
    // private AudioSource audioSource;
+
 
     private Rigidbody m_rigidbody;
 
     public static bool s_canMove = true;
 
-   // public AudioClip footStep; // ó¨Ç∑ë´âπÇÃê›íË
+   // public AudioClip footStep; // ÊµÅ„ÅôË∂≥Èü≥„ÅÆË®≠ÂÆö
 
     // Start is called before the first frame update
     void Start()
@@ -32,19 +31,30 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_xMove = Input.GetAxis("Horizontal") * x_sensitivity;
-        m_zMove = Input.GetAxis("Vertical") * y_sensitivity;
+        m_inputAxis.x = Input.GetAxis("Horizontal");
+        m_inputAxis.z = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
     {
-        // ÉÅÉjÉÖÅ[Ç™äJÇ¢ÇƒÇ¢ÇΩÇËÇµÇƒÇ¢ÇÈÇ∆Ç´Ç…ìÆÇ´Çé~ÇﬂÇΩÇ¢
-        if (!s_canMove) return;
+        // „É°„Éã„É•„Éº„ÅåÈñã„ÅÑ„Å¶„ÅÑ„Åü„Çä„Åó„Å¶„ÅÑ„Çã„Å®„Åç„Å´Âãï„Åç„ÇíÊ≠¢„ÇÅ„Åü„ÅÑ
+        if (!s_canMove)
+        {
+            m_rigidbody.velocity = Vector3.zero;
+            return;
+        }
 
-        // Ç¢Ç¢ä¥Ç∂Ç…é©ï™ÇÃå¸Ç´Ç…Ç†ÇÌÇπÇƒAddForceÇâÒì]Ç≥ÇπÇΩÇ¢
-        //Debug.Log(transform.eulerAngles);
-        Vector3 power = new Vector3(m_xMove, 0, m_zMove);
+        // „ÅÑ„ÅÑÊÑü„Åò„Å´Ëá™ÂàÜ„ÅÆÂêë„Åç„Å´„ÅÇ„Çè„Åõ„Å¶AddForce„ÇíÂõûËª¢„Åï„Åõ„Åü„ÅÑ
+        // ÂÖ•Âäõ„Åå1‰ª•‰∏ä„Å´„Å™„Çâ„Å™„ÅÑ„Çà„ÅÜ„Å´„Åô„Çã
+        if (m_inputAxis.sqrMagnitude > 1)
+        {
+            m_inputAxis.Normalize();
+        }
+        m_inputAxis *= m_moveSpeed;
+
+        // ÈáçÂäõ‰ª•Â§ñ„ÇíË®≠ÂÆö
+        Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
-        m_rigidbody.AddForce(power);
+        m_rigidbody.velocity = power;
     }
 }
