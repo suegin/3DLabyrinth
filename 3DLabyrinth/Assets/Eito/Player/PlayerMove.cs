@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    // ˆÚ“®‚·‚é
+    // ç§»å‹•ã™ã‚‹
 
     private float m_moveSpeed = 10f;
 
-    private Vector3 m_inputAxis;
+
+
+   // private bool isRunning; // ç§»å‹•ã—ã¦ã„ã‚‹ã‹ã—ã¦ã„ãªã„ã‹ã®ãƒ•ãƒ©ã‚°
+   // private AudioSource audioSource;
+
 
     private Rigidbody m_rigidbody;
 
     public static bool s_canMove = true;
 
+   // public AudioClip footStep; // æµã™è¶³éŸ³ã®è¨­å®š
+
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+       // audioSource = GetComponent<AudioSource>();
+       // isRunning = false;
     }
 
     // Update is called once per frame
@@ -29,22 +37,22 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ƒƒjƒ…[‚ªŠJ‚¢‚Ä‚¢‚½‚è‚µ‚Ä‚¢‚é‚Æ‚«‚É“®‚«‚ğ~‚ß‚½‚¢
+        // ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãŒé–‹ã„ã¦ã„ãŸã‚Šã—ã¦ã„ã‚‹ã¨ãã«å‹•ãã‚’æ­¢ã‚ãŸã„
         if (!s_canMove)
         {
             m_rigidbody.velocity = Vector3.zero;
             return;
         }
 
-        // ‚¢‚¢Š´‚¶‚É©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ğ‰ñ“]‚³‚¹‚½‚¢
-        // “ü—Í‚ª1ˆÈã‚É‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é
+        // ã„ã„æ„Ÿã˜ã«è‡ªåˆ†ã®å‘ãã«ã‚ã‚ã›ã¦AddForceã‚’å›è»¢ã•ã›ãŸã„
+        // å…¥åŠ›ãŒ1ä»¥ä¸Šã«ãªã‚‰ãªã„ã‚ˆã†ã«ã™ã‚‹
         if (m_inputAxis.sqrMagnitude > 1)
         {
             m_inputAxis.Normalize();
         }
         m_inputAxis *= m_moveSpeed;
 
-        // d—ÍˆÈŠO‚ğİ’è
+        // é‡åŠ›ä»¥å¤–ã‚’è¨­å®š
         Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
         m_rigidbody.velocity = power;

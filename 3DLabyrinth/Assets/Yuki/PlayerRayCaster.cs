@@ -12,6 +12,9 @@ public class PlayerRayCaster : MonoBehaviour
     private const float kThrowPower = 15f;
     private const float kRayLength = 5f;
 
+    //AudioSource audioSource;
+    //public AudioClip ballGrab;
+    //public AudioClip ballThrow;
     // 自分の状態
     private bool m_isGrabbingBall = false;
     public bool isCatchedBallCollider = false;
@@ -24,6 +27,7 @@ public class PlayerRayCaster : MonoBehaviour
     void Start()
     {
         m_cursor = GameObject.Find("Cursor").GetComponent<Image>();
+       // audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -97,6 +101,7 @@ public class PlayerRayCaster : MonoBehaviour
         // オブジェクトの物理演算を無効化する
         m_grabObject.GetComponent<Rigidbody>().isKinematic = true;
         m_grabObject.GetComponent<SphereCollider>().enabled = false;
+       // audioSource.Play();
     }
 
     private void Throw()
@@ -110,6 +115,7 @@ public class PlayerRayCaster : MonoBehaviour
         // 自分(カメラ)の向きにAddForce
         m_grabObject.GetComponent<Rigidbody>()
             .AddForce(transform.forward * kThrowPower, ForceMode.Impulse);
+       // audioSource.Play();
     }
 
     private void PressSwitch()
