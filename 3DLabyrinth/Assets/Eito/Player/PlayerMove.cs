@@ -6,11 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     // 移動する
 
-    private float x_sensitivity = 20f;
-    private float y_sensitivity = 20f;
+    private float m_moveSpeed = 10f;
 
-    private float m_xMove = 0;
-    private float m_zMove = 0;
+    private Vector3 m_inputAxis;
 
     private Rigidbody m_rigidbody;
 
@@ -25,19 +23,30 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_xMove = Input.GetAxis("Horizontal") * x_sensitivity;
-        m_zMove = Input.GetAxis("Vertical") * y_sensitivity;
+        m_inputAxis.x = Input.GetAxis("Horizontal");
+        m_inputAxis.z = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
     {
         // メニューが開いていたりしているときに動きを止めたい
-        if (!s_canMove) return;
+        if (!s_canMove)
+        {
+            m_rigidbody.velocity = Vector3.zero;
+            return;
+        }
 
         // いい感じに自分の向きにあわせてAddForceを回転させたい
-        //Debug.Log(transform.eulerAngles);
-        Vector3 power = new Vector3(m_xMove, 0, m_zMove);
+        // 入力が1以上にならないようにする
+        if (m_inputAxis.sqrMagnitude > 1)
+        {
+            m_inputAxis.Normalize();
+        }
+        m_inputAxis *= m_moveSpeed;
+
+        // 重力以外を設定
+        Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
-        m_rigidbody.AddForce(power);
+        m_rigidbody.velocity = power;
     }
 }
