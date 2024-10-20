@@ -12,6 +12,6 @@ public class SceneChange : MonoBehaviour
     }
     public void OnClickTitleScene()
     {
-        SceneManager.LoadScene("TitleScene"); // タイトルに移動
+        SceneManager.LoadScene("TitleScene_Marged"); // タイトルに移動
     }
 }

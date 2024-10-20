@@ -8100,6 +8100,7 @@ MonoBehaviour:
   cameraPanel: {fileID: 284671724}
   m_submitSE: {fileID: 8300000, guid: f5b56734db38e3645b42da322cb5bfe2, type: 3}
   m_cancelSE: {fileID: 8300000, guid: 1ad65582686060c43aeb52dc0f69d9e3, type: 3}
+  m_move: {fileID: 0}
 --- !u!82 &1604248071
 AudioSource:
   m_ObjectHideFlags: 0
