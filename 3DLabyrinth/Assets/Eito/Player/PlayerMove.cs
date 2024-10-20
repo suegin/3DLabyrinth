@@ -5,69 +5,78 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    // ˆÚ“®‚·‚é
+
     private bool m_canMove = true;
+
     private float m_moveSpeed = 10f;
 
-    private Vector3 m_inputAxis;
+
+
+    // private bool isRunning; // ç§»å‹•ã—ã¦ã„ã‚‹ã‹ã—ã¦ã„ãªã„ã‹ã®ãƒ•ãƒ©ã‚°
+    // private AudioSource audioSource;
+
 
     private Rigidbody m_rigidbody;
 
-    // ƒ|[ƒY‚É©•ª‚Ì‘¬“x‚ğ‹L‰¯‚µ‚Ä‚¨‚­
+    // ï¿½|ï¿½[ï¿½Yï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½xï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
     private Vector3 m_pausedVelocity = Vector3.zero;
+
+   // public AudioClip footStep; // æµã™è¶³éŸ³ã®è¨­å®š
 
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+       // audioSource = GetComponent<AudioSource>();
+       // isRunning = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_inputAxis.x = Input.GetAxis("Horizontal");
-        m_inputAxis.z = Input.GetAxis("Vertical");
+        //m_inputAxis.x = Input.GetAxis("Horizontal");
+        //m_inputAxis.z = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
     {
-        // “®‚¯‚é‚©‚Ç‚¤‚©
+        // ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
         if (!m_canMove) return;
 
-        // ‚¢‚¢Š´‚¶‚É©•ª‚ÌŒü‚«‚É‚ ‚í‚¹‚ÄAddForce‚ğ‰ñ“]‚³‚¹‚½‚¢
-        // “ü—Í‚ª1ˆÈã‚É‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é
-        if (m_inputAxis.sqrMagnitude > 1)
-        {
-            m_inputAxis.Normalize();
-        }
-        m_inputAxis *= m_moveSpeed;
+        // ã„ã„æ„Ÿã˜ã«è‡ªåˆ†ã®å‘ãã«ã‚ã‚ã›ã¦AddForceã‚’å›è»¢ã•ã›ãŸã„
+        // å…¥åŠ›ãŒ1ä»¥ä¸Šã«ãªã‚‰ãªã„ã‚ˆã†ã«ã™ã‚‹
+        //if (m_inputAxis.sqrMagnitude > 1)
+        //{
+        //    m_inputAxis.Normalize();
+        //}
+        //m_inputAxis *= m_moveSpeed;
 
-        // d—ÍˆÈŠO‚ğİ’è
-        Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
-        power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
-        m_rigidbody.velocity = power;
+        // é‡åŠ›ä»¥å¤–ã‚’è¨­å®š
+        //Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
+        //power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
+        //m_rigidbody.velocity = power;
     }
 
     public void Stop()
     {
-        // ƒƒjƒ…[‚ªŠJ‚¢‚Ä‚¢‚½‚è‚µ‚Ä‚¢‚é‚Æ‚«‚É“®‚«‚ğ~‚ß‚½‚¢
-        // ‘¬“x‚ğ‹L‰¯
+        // ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½è‚µï¿½Ä‚ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ß‚ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½Lï¿½ï¿½
         m_pausedVelocity = m_rigidbody.velocity;
-        // ÀÛ‚Ì‘¬“x‚ğƒ[ƒ‚É
+        // ï¿½ï¿½ï¿½Û‚Ì‘ï¿½ï¿½xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
         m_rigidbody.useGravity = false;
         m_rigidbody.velocity = Vector3.zero;
-        // “®‚¯‚Ü‚¹[ƒ“
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½[ï¿½ï¿½
         m_canMove = false;
     }
 
     public void Resume()
     {
-        // “®‚«‚ğÄŠJ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄŠJ
         m_rigidbody.useGravity = true;
         m_rigidbody.velocity = m_pausedVelocity;
-        // ‹L‰¯‚Ííœ
+        // ï¿½Lï¿½ï¿½ï¿½Ííœ
         m_pausedVelocity = Vector3.zero;
-        // “®‚¯‚Ü[‚·
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ü[ï¿½ï¿½
         m_canMove = true;
     }
 }
