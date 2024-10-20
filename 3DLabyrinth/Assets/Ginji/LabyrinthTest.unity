@@ -1908,6 +1908,7 @@ GameObject:
   - component: {fileID: 322281874}
   - component: {fileID: 322281873}
   - component: {fileID: 322281872}
+  - component: {fileID: 322281876}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -2002,6 +2003,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322281876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322281871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127fa08a26ac0ea4c947480602a354b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &335179298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3019,7 +3032,7 @@ Transform:
   m_GameObject: {fileID: 566451373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.91, y: 1, z: -16.92}
+  m_LocalPosition: {x: 17.24, y: 1, z: -17.06}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8617,26 +8630,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141370182519659736, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_Drag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_Mass
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026008120278264667, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
-      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143090636605625329, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
