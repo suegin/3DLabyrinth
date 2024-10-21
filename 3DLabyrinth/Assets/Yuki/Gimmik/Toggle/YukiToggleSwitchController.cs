@@ -8,7 +8,7 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
 
     // スイッチ(自分)がオンなのか
     public bool isOn { get; private set; } = false;
-    public AudioClip switchPush;
+    public AudioClip switchPushSE;
     private AudioSource audioSource;
 
     // 自分のメッシュレンダラー
@@ -33,16 +33,14 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
 
     void Update()
     {
-        if(Input.GetKeyDown("joystick button 0")) 
-        {
-            audioSource.PlayOneShot(switchPush); 
-        } 
     }
 
     public void Interact()
     {
         if (isOn && !m_canTurnOff) return;
 
+        // 音を鳴らす
+        audioSource.PlayOneShot(switchPushSE);
         // 状態フラグを反転する
         isOn = !isOn;
         ChangeSwitchState(isOn);

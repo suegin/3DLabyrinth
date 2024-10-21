@@ -118,8 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2005baa496034904aa4f09a1028ae414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchPushSE: {fileID: 8300000, guid: 9a57e84da72fe5a4ebb11ef7082b1708, type: 3}
   m_offMaterial: {fileID: 2100000, guid: 8d266bc93056f8e4ab625f0d6123ef14, type: 2}
   m_onMaterial: {fileID: 2100000, guid: 42f41297bd16a46409335ddb0e879c4f, type: 2}
+  m_canTurnOff: 0
 --- !u!1 &8063927826189503799
 GameObject:
   m_ObjectHideFlags: 0

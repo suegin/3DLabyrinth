@@ -5,7 +5,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     // プレイヤーが触れたらジャンプ
-    Vector3 m_jumpForce = new Vector3(0.0f, 25.0f, 0.0f);
+    Vector3 m_jumpForce = new Vector3(0.0f, 10.0f, 0.0f);
 
     private void OnTriggerEnter(Collider other)
     {
