@@ -8,11 +8,11 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
 
     // スイッチ(自分)がオンなのか
     public bool isOn { get; private set; } = false;
-    public AudioClip switchPushSE;
-    private AudioSource audioSource;
 
     // 自分のメッシュレンダラー
     private MeshRenderer m_meshRenderer;
+
+    private AudioSource m_audioSource;
 
     // エディタでオッケー
     [SerializeField]
@@ -28,11 +28,7 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
     {
         m_meshRenderer = GetComponent<MeshRenderer>();
         ChangeSwitchState(isOn);
-        audioSource = GetComponent<AudioSource>();  
-    }
-
-    void Update()
-    {
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     public void Interact()
@@ -40,7 +36,7 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
         if (isOn && !m_canTurnOff) return;
 
         // 音を鳴らす
-        audioSource.PlayOneShot(switchPushSE);
+        m_audioSource.Play();
         // 状態フラグを反転する
         isOn = !isOn;
         ChangeSwitchState(isOn);
