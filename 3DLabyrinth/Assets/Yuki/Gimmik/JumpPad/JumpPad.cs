@@ -12,7 +12,9 @@ public class JumpPad : MonoBehaviour
         string tag = other.tag;
         if (tag == "Player" || tag == "Ball")
         {
-            other.GetComponent<Rigidbody>().AddForce(m_jumpForce, ForceMode.Impulse);
+            Rigidbody rigidbody = other.GetComponent<Rigidbody>();
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.AddForce(m_jumpForce, ForceMode.Impulse);
         }
     }
 }
