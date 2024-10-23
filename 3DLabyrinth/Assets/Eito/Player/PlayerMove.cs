@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
@@ -51,6 +53,7 @@ public class PlayerMove : MonoBehaviour
 
         // 重力以外を設定
         Vector3 power = new Vector3(m_inputAxis.x, m_rigidbody.velocity.y, m_inputAxis.z);
+
         power = Quaternion.AngleAxis(transform.eulerAngles.y, transform.up) * power;
         m_rigidbody.velocity = power;
     }

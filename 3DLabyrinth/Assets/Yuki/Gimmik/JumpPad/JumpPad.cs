@@ -5,7 +5,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     // プレイヤーが触れたらジャンプ
-    Vector3 m_jumpForce = new Vector3(0.0f, 10.0f, 0.0f);
+    public Vector3 m_jumpForce = new Vector3(0.0f, 10.0f, 0.0f);
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +14,8 @@ public class JumpPad : MonoBehaviour
         {
             Rigidbody rigidbody = other.GetComponent<Rigidbody>();
             rigidbody.velocity = Vector3.zero;
-            rigidbody.AddForce(m_jumpForce, ForceMode.Impulse);
+            // 回転を神
+            rigidbody.AddForce(transform.rotation * m_jumpForce, ForceMode.Impulse);
         }
     }
 }
