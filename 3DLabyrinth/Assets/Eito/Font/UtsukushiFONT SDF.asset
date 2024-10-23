@@ -121,6 +121,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 36
+    m_Metrics:
+      m_Width: 57.234375
+      m_Height: 67.9375
+      m_HorizontalBearingX: 5.40625
+      m_HorizontalBearingY: 66.59375
+      m_HorizontalAdvance: 65.703125
+    m_GlyphRect:
+      m_X: 913
+      m_Y: 10
+      m_Width: 58
+      m_Height: 69
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 38
     m_Metrics:
       m_Width: 52.921875
@@ -226,6 +241,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 55
+    m_Metrics:
+      m_Width: 65.515625
+      m_Height: 65.328125
+      m_HorizontalBearingX: -0.265625
+      m_HorizontalBearingY: 64.34375
+      m_HorizontalAdvance: 64.625
+    m_GlyphRect:
+      m_X: 827
+      m_Y: 10
+      m_Width: 67
+      m_Height: 66
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 64
     m_Metrics:
       m_Width: 45
@@ -268,6 +298,21 @@ MonoBehaviour:
       m_Y: 100
       m_Width: 40
       m_Height: 47
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 69
+    m_Metrics:
+      m_Width: 47.96875
+      m_Height: 65.703125
+      m_HorizontalBearingX: 5.125
+      m_HorizontalBearingY: 65.609375
+      m_HorizontalAdvance: 55.265625
+    m_GlyphRect:
+      m_X: 10
+      m_Y: 446
+      m_Width: 49
+      m_Height: 67
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -631,59 +676,26 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 55
-    m_Metrics:
-      m_Width: 65.515625
-      m_Height: 65.328125
-      m_HorizontalBearingX: -0.265625
-      m_HorizontalBearingY: 64.34375
-      m_HorizontalAdvance: 64.625
-    m_GlyphRect:
-      m_X: 827
-      m_Y: 10
-      m_Width: 67
-      m_Height: 66
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 36
-    m_Metrics:
-      m_Width: 57.234375
-      m_Height: 67.9375
-      m_HorizontalBearingX: 5.40625
-      m_HorizontalBearingY: 66.59375
-      m_HorizontalAdvance: 65.703125
-    m_GlyphRect:
-      m_X: 913
-      m_Y: 10
-      m_Width: 58
-      m_Height: 69
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 69
-    m_Metrics:
-      m_Width: 47.96875
-      m_Height: 65.703125
-      m_HorizontalBearingX: 5.125
-      m_HorizontalBearingY: 65.609375
-      m_HorizontalAdvance: 55.265625
-    m_GlyphRect:
-      m_X: 10
-      m_Y: 446
-      m_Width: 49
-      m_Height: 67
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 10
     m_GlyphIndex: 1
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 13
+    m_GlyphIndex: 1
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 32
+    m_GlyphIndex: 1
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 66
     m_GlyphIndex: 35
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 67
+    m_GlyphIndex: 36
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 69
@@ -714,6 +726,10 @@ MonoBehaviour:
     m_GlyphIndex: 52
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 86
+    m_GlyphIndex: 55
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 95
     m_GlyphIndex: 64
     m_Scale: 1
@@ -724,6 +740,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 99
     m_GlyphIndex: 68
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 100
+    m_GlyphIndex: 69
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 101
@@ -820,22 +840,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 65363
     m_GlyphIndex: 834
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 86
-    m_GlyphIndex: 55
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 67
-    m_GlyphIndex: 36
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 13
-    m_GlyphIndex: 1
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 100
-    m_GlyphIndex: 69
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: -7265238666027294439}
