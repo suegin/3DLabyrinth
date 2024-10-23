@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
+    private Vector3 m_rotaSpeed = new Vector3(0.0f, 2.0f, 0.0f);
+    [SerializeField]
+    private AudioClip m_clip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +18,7 @@ public class CoinController : MonoBehaviour
     void Update()
     {
         // ‰ñ“]‚Æ‚©•‚—V‚Æ‚©
+        transform.Rotate(m_rotaSpeed, Space.World);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +32,10 @@ public class CoinController : MonoBehaviour
     private void Gain()
     {
         // ‰¹‚ð–Â‚ç‚·
-        GetComponent<AudioSource>().Play();
+        AudioSource.PlayClipAtPoint(m_clip, transform.position, 0.1f);
+        // ƒRƒCƒ“‚ð‰ÁŽZ
+        CoinNumberController.IncreaseCoin();
+
+        Destroy(gameObject);
     }
 }
