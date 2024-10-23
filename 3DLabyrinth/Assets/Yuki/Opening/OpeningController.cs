@@ -15,11 +15,8 @@ public class OpeningController : MonoBehaviour
 
     private string[] m_texts =
     {
-        "テスト",
-        "オープニングの文字を表示できます",
-        "何行でも書けます",
-        "今は終了時にシーンをロードするけど",
-        "デリゲートで汎用性を高められると思う"
+        "あああ",
+        "いいい"
     };
 
     private CanvasGroup m_canvasGroup;
