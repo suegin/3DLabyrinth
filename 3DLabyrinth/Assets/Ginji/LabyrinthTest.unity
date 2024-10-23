@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.71129435, g: 0.8008629, b: 0.88006836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5336,6 +5336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPad
       objectReference: {fileID: 0}
+    - target: {fileID: 7595682821955427326, guid: 10433842211900543a47fa752ac5ec4c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d6e7475a477721949a7fa2353ffb7e32, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6764,7 +6768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3356092842971125092, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3356092842971125092, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6816,7 +6820,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 069e9c87a5f45fc44bce0a81e7b2bc11, type: 2}
     - target: {fileID: 5224118363925462459, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5224118363925462459, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6916,7 +6920,7 @@ PrefabInstance:
       objectReference: {fileID: 1771059298}
     - target: {fileID: 8208549457887377482, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8208549457887377482, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6944,7 +6948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188587464435591159, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9188587464435591159, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8499,7 +8503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.9
+      value: 13.4
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8507,7 +8511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.6
+      value: -25.4
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalRotation.w
