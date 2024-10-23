@@ -26,6 +26,7 @@ public class CoinController : MonoBehaviour
 
     private void Gain()
     {
-
+        // ‰¹‚ð–Â‚ç‚·
+        GetComponent<AudioSource>().Play();
     }
 }
