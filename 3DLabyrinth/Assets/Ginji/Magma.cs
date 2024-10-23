@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Magma : MonoBehaviour
 {
-    GameObject player; 
+    GameObject player;
+    [SerializeField]
+    Vector3 transPos = new Vector3(0, 0, 0);
 
     private void Start()
     {
@@ -19,7 +21,7 @@ public class Magma : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            player.transform.position = new Vector3(5.0f, 1.0f, -20.0f);
+            player.transform.position = transPos;
         }
     }
 }
