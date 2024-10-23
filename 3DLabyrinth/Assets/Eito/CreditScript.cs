@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class CreditScript : MonoBehaviour
 {
@@ -22,19 +23,20 @@ public class CreditScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
-        {
-            FocusButton();
-        }
+        //if (Input.anyKey)
+        //{
+        //    FocusButton();
+        //}
 
         // Aボタンを押すとスクロールスピードが上がる
         if (Input.GetKey("joystick button 0"))　
         {
             staffrollPosition.y += 1f;
         }
-
+        // Bボタンを押すとタイトルシーンに戻る
         if (Input.GetKey("joystick button 1"))
         {
+            SceneManager.LoadScene(2);
             creditView.SetActive(false);
             titleSceneView.SetActive(true);
             FocusButton();
