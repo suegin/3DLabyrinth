@@ -976,8 +976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0000203, y: 7.0000196}
-  m_SizeDelta: {x: 1171.591, y: 323.421}
+  m_AnchoredPosition: {x: -77, y: -30}
+  m_SizeDelta: {x: 1425.399, y: 345.492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522413723
 MonoBehaviour:
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 25.742493, y: 0, z: -172.88428, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1107,20 +1107,20 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 2.732274
-          outSlope: 2.732274
+          inSlope: 1
+          outSlope: 1
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
-          time: 1.045517
-          value: 2.856639
-          inSlope: 2.732274
-          outSlope: 2.732274
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1131,7 +1131,7 @@ MonoBehaviour:
       use: 1
       delay: 1.25
       wave: 0.25
-      time: 1
+      time: 0.5
       curve:
         serializedVersion: 2
         m_Curve:
@@ -1162,28 +1162,64 @@ MonoBehaviour:
       use: 0
       delay: 0
       wave: 0
-      time: 0
+      time: 1
       curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: -0.023132324
+          value: -2.0303192
+          inSlope: 2.9618058
+          outSlope: 2.9618058
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 2.9618058
+          outSlope: 2.9618058
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      from: {x: 0, y: 0}
-      to: {x: 0, y: 0}
+      from: {x: 1, y: 1}
+      to: {x: 1.5, y: 1.5}
     alpha:
       use: 0
       delay: 0
       wave: 0
-      time: 0
+      time: 1.5
       curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       from: 0
-      to: 0
+      to: 1
     color:
       use: 0
       delay: 0
