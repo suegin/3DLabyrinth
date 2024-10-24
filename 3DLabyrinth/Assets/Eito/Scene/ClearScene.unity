@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 1522413723}
   - component: {fileID: 1522413725}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GameClearText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,10 +999,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30B2\u30FC\u30E0\u30AF\u30EA\u30A2\uFF01"
+  m_text: GameClear!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d466ef5b16886814caae080303536367, type: 2}
-  m_sharedMaterial: {fileID: -7306657809758216163, guid: d466ef5b16886814caae080303536367, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e1f11e248e22784c90f9604125d6624, type: 2}
+  m_sharedMaterial: {fileID: 1083216928113359543, guid: 9e1f11e248e22784c90f9604125d6624, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1090,16 +1090,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: 0
   playOnEnable: 1
-  playByProgress: 1
+  playByProgress: 0
   isLoop: 0
   animationData:
-    speed: 11
+    speed: 1
     useMaxVisibleCharacter: 0
     pivot: {x: 0.5, y: 0.5}
     position:
-      use: 0
+      use: 1
       delay: 0
-      wave: 0
+      wave: 0.25
+      time: 0.5
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 2.732274
+          outSlope: 2.732274
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1.045517
+          value: 2.856639
+          inSlope: 2.732274
+          outSlope: 2.732274
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      from: {x: 0, y: 0, z: 0}
+      to: {x: 0, y: 50, z: 0}
+    rotation:
+      use: 1
+      delay: 1.25
+      wave: 0.25
       time: 1
       curve:
         serializedVersion: 2
@@ -1126,20 +1157,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       from: {x: 0, y: 0, z: 0}
-      to: {x: 0, y: 11, z: 0}
-    rotation:
-      use: 0
-      delay: 0
-      wave: 0
-      time: 0
-      curve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      from: {x: 0, y: 0, z: 0}
-      to: {x: 0, y: 0, z: 0}
+      to: {x: 0, y: 360, z: 0}
     scale:
       use: 0
       delay: 0
