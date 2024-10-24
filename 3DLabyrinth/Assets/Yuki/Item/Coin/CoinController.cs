@@ -32,7 +32,7 @@ public class CoinController : MonoBehaviour
     private void Gain()
     {
         // ‰¹‚ð–Â‚ç‚·
-        AudioSource.PlayClipAtPoint(m_clip, transform.position, 0.1f);
+        SEGenerator.GenerateSEAtPoint(transform.position, m_clip, 0.1f);
         // ƒRƒCƒ“‚ð‰ÁŽZ
         CoinNumberController.IncreaseCoin();
 
