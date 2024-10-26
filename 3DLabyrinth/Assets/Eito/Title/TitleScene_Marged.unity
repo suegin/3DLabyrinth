@@ -5687,7 +5687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6212339424636731563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6166,7 +6166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &6966038251317580667
 GameObject:
   m_ObjectHideFlags: 0
@@ -7343,6 +7343,7 @@ MonoBehaviour:
   endPos: 2000
   creditView: {fileID: 8189160913723675509}
   titleSceneView: {fileID: 6176366550204750384}
+  audioClip: {fileID: 0}
 --- !u!224 &8774925388538217831
 RectTransform:
   m_ObjectHideFlags: 0
