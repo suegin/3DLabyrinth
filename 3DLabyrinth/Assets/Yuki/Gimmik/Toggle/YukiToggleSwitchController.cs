@@ -45,7 +45,7 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
     private void ChangeSwitchState(bool state)
     {
         // 引数の状態に応じてデータを変える
-        if (isOn)
+        if (state)
         {
             // オンの時の状態
             transform.localPosition = Vector3.zero;
