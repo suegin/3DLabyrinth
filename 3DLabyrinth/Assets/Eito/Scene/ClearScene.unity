@@ -1091,7 +1091,7 @@ MonoBehaviour:
   progress: 0
   playOnEnable: 1
   playByProgress: 0
-  isLoop: 0
+  isLoop: 1
   animationData:
     speed: 1
     useMaxVisibleCharacter: 0
@@ -1099,39 +1099,57 @@ MonoBehaviour:
     position:
       use: 1
       delay: 0
-      wave: 0.25
+      wave: 0.1
       time: 0.5
       curve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 1
-          outSlope: 1
+          time: -3.0167055
+          value: 3.0250666
+          inSlope: -3.5050328
+          outSlope: -3.5050328
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 1
+          time: -1.279938
+          value: -3.0623603
+          inSlope: -0.22444725
+          outSlope: -0.22444725
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.67984086
+          value: 2.9269948
+          inSlope: -1.9060339
+          outSlope: -1.9060339
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1.5362437
+          value: -2.954956
+          inSlope: -6.868206
+          outSlope: -6.868206
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 1
+        m_PostInfinity: 1
         m_RotationOrder: 4
       from: {x: 0, y: 0, z: 0}
-      to: {x: 0, y: 50, z: 0}
+      to: {x: 0, y: 30, z: 0}
     rotation:
-      use: 1
-      delay: 1.25
-      wave: 0.25
-      time: 0.5
+      use: 0
+      delay: 0
+      wave: 0.2
+      time: 0.25
       curve:
         serializedVersion: 2
         m_Curve:
@@ -1160,26 +1178,44 @@ MonoBehaviour:
       to: {x: 0, y: 360, z: 0}
     scale:
       use: 0
-      delay: 0
-      wave: 0
+      delay: 1.5
+      wave: 1
       time: 1
       curve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: -0.023132324
-          value: -2.0303192
-          inSlope: 2.9618058
-          outSlope: 2.9618058
+          time: 0.019454956
+          value: 0.010574341
+          inSlope: -1.3779372
+          outSlope: -1.3779372
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 2.9618058
-          outSlope: 2.9618058
+          time: 0.79641503
+          value: -1.0600278
+          inSlope: 3.010231
+          outSlope: 3.010231
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1.0295883
+          value: 0.6650814
+          inSlope: 3.76929
+          outSlope: 3.76929
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 2.7801514
+          value: 0.9104767
+          inSlope: 0.14018078
+          outSlope: 0.14018078
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -1188,7 +1224,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       from: {x: 1, y: 1}
-      to: {x: 1.5, y: 1.5}
+      to: {x: 1, y: 1}
     alpha:
       use: 0
       delay: 0
