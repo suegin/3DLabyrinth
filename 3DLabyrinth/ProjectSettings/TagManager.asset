@@ -9,6 +9,7 @@ TagManager:
   - FirstSelectedButton
   - Target
   - RetryBoard
+  - CreditView
   layers:
   - Default
   - TransparentFX

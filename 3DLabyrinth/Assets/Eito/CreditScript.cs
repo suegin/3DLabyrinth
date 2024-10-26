@@ -14,15 +14,15 @@ public class CreditScript : MonoBehaviour
     public GameObject creditView;
     public GameObject titleSceneView;
 
-    private AudioSource audioSource;
-    public AudioClip audioClip;
+    private AudioSource bgmAudioSource;
+    public AudioClip bgmAudioClip;
 
     // Start is called before the first frame update
     void Start()
     {
         staffrollPosition = rectTransform.anchoredPosition;
         m_eventSystem = EventSystem.current;
-        audioSource = GetComponent<AudioSource>();
+        bgmAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +33,7 @@ public class CreditScript : MonoBehaviour
         //    FocusButton();
         //}
 
+      
         // Aボタンを押すとスクロールスピードが上がる
         if (Input.GetKey("joystick button 0"))　
         {
@@ -55,6 +56,19 @@ public class CreditScript : MonoBehaviour
         }
     }
 
+    //public void PlayBgm()
+    //{
+    //    bgmAudioSource.Play();
+    //}
+
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == "CreditView")
+    //    {
+    //        bgmAudioSource.Play();
+    //        Debug.Log("aaa");
+    //    }
+    //}
     private void FocusButton()
     {
         // UI切り替え時にこれを実行すればいい感じにフォーカスされる

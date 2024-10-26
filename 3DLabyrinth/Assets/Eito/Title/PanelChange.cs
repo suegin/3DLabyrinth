@@ -13,6 +13,9 @@ public class PanelChange : MonoBehaviour
     public GameObject creditView;
     public GameObject titleSceneView;
 
+    private AudioSource bgmAudioSource;
+    public AudioClip bgmAudioClip;
+
     // コントローラをフォーカスするためのもの
     private EventSystem m_eventSystem;
 
@@ -26,6 +29,7 @@ public class PanelChange : MonoBehaviour
     void Start()
     {
         m_eventSystem = EventSystem.current;
+       // bgmAudioSource = GetComponent<AudioSource>();
 
         mainView.SetActive(false); 
         soundView.SetActive(false);
@@ -71,6 +75,9 @@ public class PanelChange : MonoBehaviour
         cameraView.SetActive(false);
         creditView.SetActive(true);
         titleSceneView.SetActive(false);
+
+     //   PauseBgm();
+
         FocusButton();
     }
 
@@ -80,5 +87,19 @@ public class PanelChange : MonoBehaviour
         soundView.SetActive(false);
         titleSceneView.SetActive(true);
         FocusButton();
+    }
+
+    //public void PauseBgm()
+    //{
+    //    bgmAudioSource.Pause();
+    //}
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "CreditView")
+        {
+            bgmAudioSource.Play();
+            Debug.Log("aaa");
+        }
     }
 }
