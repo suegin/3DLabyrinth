@@ -40,7 +40,6 @@ public class GameSettingManager : MonoBehaviour
 
         // カメラ感度はこのスクリプトの変数が本体なので反映とかはない
     }
-
     private float Decibels(float value)
     {
         return Mathf.Clamp(Mathf.Log10(value) * 20, -80, 0);

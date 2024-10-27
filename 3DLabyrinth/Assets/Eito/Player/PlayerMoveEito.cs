@@ -29,10 +29,6 @@ public class PlayerMoveEito : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_inputAxis != Vector3.zero)
-        {
-
-        }
         m_inputAxis.x = Input.GetAxis("Horizontal");
         m_inputAxis.z = Input.GetAxis("Vertical");
     }
