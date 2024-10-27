@@ -30,6 +30,11 @@ public class LookMove : MonoBehaviour
         m_yRotate = Input.GetAxis("VerticalRight") * -GameSettingManager.s_ySensitivity;
     }
 
+    public static void SetCanMove(bool canMove)
+    {
+        s_canLookMove = canMove;
+    }
+
     private void FixedUpdate()
     {
         // 動けるかどうか
