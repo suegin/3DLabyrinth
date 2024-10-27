@@ -1,8 +1,3 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -62,6 +57,15 @@ public class PlayerMove : MonoBehaviour
     {
         // 移動を止める
         m_pausedVelocity = m_rigidbody.velocity;
+        m_rigidbody.useGravity = false;
+        m_rigidbody.velocity = Vector3.zero;
+        m_canMove = false;
+    }
+
+    // 移動量の保存を行わないStop関数
+    public void KillVelocityStop()
+    {
+        m_pausedVelocity = Vector3.zero;
         m_rigidbody.useGravity = false;
         m_rigidbody.velocity = Vector3.zero;
         m_canMove = false;

@@ -6,6 +6,8 @@ using UnityEngine;
 public class TargetCollider : MonoBehaviour
 {
     public DoorScript door; // ドアスクリプトとの連動
+    [SerializeField]
+    private AudioClip m_targetSE;
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +21,15 @@ public class TargetCollider : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ball"))　// ボールが当たったら
-        {
-            door.isOpen = true;
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ball"))　// ボールが当たったら
+        if (collision.gameObject.CompareTag("Ball") && !door.isOpen)　// 初回のボールが当たったら
         {
-            door.isOpen = true;
+            door.DoorOpen();
+            // SEを鳴らす
+            SEGenerator.GenerateSEAtPoint(transform.position, m_targetSE);
+            // お隣のスクリプトに止めろと指示を出す
+            GetComponent<TargetScript>().SetCanMove(false);
         }
     }
 }

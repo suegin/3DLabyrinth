@@ -5,9 +5,11 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     float defaultY;     // 扉の初期のY座標
-    float openY = 10f;   // 扉のオープン時のY座標
+    float openY = 8f;   // 扉のオープン時のY座標
     float speed = 1f;   // 扉の開閉のスピード
     public bool isOpen; // 扉を開けるか閉めるかのフラグ
+    [SerializeField]
+    private AudioClip m_doorSE;
 
     void Start()
     {
@@ -24,5 +26,12 @@ public class DoorScript : MonoBehaviour
         {
             transform.position -= Vector3.down * speed * Time.deltaTime;
         }
+    }
+
+    // 関数化
+    public void DoorOpen()
+    {
+        isOpen = true;
+        SEGenerator.GenerateSEAtPoint(transform.position, m_doorSE);
     }
 }

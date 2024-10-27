@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23415105773652922}
   - component: {fileID: 7948816367711985369}
   - component: {fileID: 1670503843000625166}
+  - component: {fileID: 79966505589571528}
   m_Layer: 0
   m_Name: Military target
   m_TagString: Target
@@ -116,5 +117,19 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.051156327, y: 0.012650929, z: 0.062044766}
-  m_Center: {x: 0, y: 0, z: -0.044556383}
+  m_Size: {x: 0.05, y: 0.01, z: 0.05}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!114 &79966505589571528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501084758933746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ce879d24d55a5488fd8fd85893751d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  m_targetSE: {fileID: 8300000, guid: 67d03ed889aa9704ca7041497c62b01a, type: 3}

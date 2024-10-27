@@ -35,7 +35,7 @@ public class Magma : MonoBehaviour
         // ‚â‚Á‚Ï‚è‘ã“ü‚Í–½—ß‚µ‚Ä‚¢‚éŠ´‚¶‚ª‚µ‚È‚¢‚Ì‚ÅŠÖ”‚ğì‚é‚Ì‚Í‘å–ƒl
         // ‚ ‚Æ•¡”s‚É‚Ü‚½‚ª‚Á‚½‚è‚·‚é‚©‚çƒl
         LookMove.SetCanMove(false);
-        player.GetComponent<PlayerMove>().Stop();
+        player.GetComponent<PlayerMove>().KillVelocityStop();
 
         // Œø‰Ê‰¹‚ğ–Â‚ç‚·
         SEGenerator.GenerateSEAtPoint(transform.position, m_burnSE);

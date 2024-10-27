@@ -20,6 +20,9 @@ public class GameSettingManager : MonoBehaviour
     // このスクリプトでAudioMixerの操作もする
     [SerializeField]
     private AudioMixer m_audioMixer;
+    // 名前ェ…
+    [SerializeField]
+    private AudioClip m_SEOptionSE;
 
     private void Start()
     {
@@ -71,6 +74,9 @@ public class GameSettingManager : MonoBehaviour
 
         m_audioMixer.SetFloat("SE_Volume", decibels);
         s_seVolume = value;
+
+        // 音を鳴らす
+        SEGenerator.GenerateSEAtPoint(transform.position, m_SEOptionSE);
     }
 
     // 戻るボタンが押された時に現在の値をセーブ
