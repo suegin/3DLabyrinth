@@ -5,7 +5,10 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     // プレイヤーが触れたらジャンプ
-    public Vector3 m_jumpForce = new Vector3(0.0f, 10.0f, 0.0f);
+    [SerializeField]
+    private Vector3 m_jumpForce = new Vector3(0.0f, 5.0f, 0.0f);
+    [SerializeField]
+    private AudioClip m_jumpSE;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +19,8 @@ public class JumpPad : MonoBehaviour
             rigidbody.velocity = Vector3.zero;
             // 回転を神
             rigidbody.AddForce(transform.rotation * m_jumpForce, ForceMode.Impulse);
+            // SE鳴らす
+            SEGenerator.GenerateSEAtPoint(transform.position, m_jumpSE);
         }
     }
 }
