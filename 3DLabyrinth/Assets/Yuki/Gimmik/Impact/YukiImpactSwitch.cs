@@ -17,6 +17,8 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
 
     private Material m_onMaterial;
     private Material m_offMaterial;
+    [SerializeField]
+    private AudioClip m_doorSE;
 
     // 操作できるかどうか
     public bool isActive = true;
@@ -48,7 +50,7 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
         // このスイッチに指定されたすべてのオブジェクトのステートを反転
         foreach (var obj in m_objects)
         {
-            obj.SetState(!obj.GetState());
+            obj.SetState(!obj.GetState(), m_doorSE);
         }
 
         // 色をじわっと変えて、元に戻す

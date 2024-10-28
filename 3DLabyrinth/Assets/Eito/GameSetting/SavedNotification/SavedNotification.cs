@@ -5,15 +5,15 @@ using TMPro;
 
 public class SavedNotification : MonoBehaviour
 {
-    private TextMeshProUGUI m_text;
+    private CanvasGroup m_group;
     private WaitForSeconds m_wait = new WaitForSeconds(2);
 
     // Start is called before the first frame update
     void Start()
     {
         // ç≈èâÇÕå©Ç¶Ç»Ç¢
-        m_text = GetComponent<TextMeshProUGUI>();
-        m_text.enabled = false;
+        m_group = GetComponent<CanvasGroup>();
+        m_group.alpha = 0;
     }
 
     public void ShowText()
@@ -25,8 +25,8 @@ public class SavedNotification : MonoBehaviour
 
     private IEnumerator ShowAndDisappear()
     {
-        m_text.enabled = true;
+        m_group.alpha = 1;
         yield return m_wait;
-        m_text.enabled = false;
+        m_group.alpha = 0;
     }
 }
