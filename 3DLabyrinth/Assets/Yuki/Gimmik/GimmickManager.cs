@@ -48,7 +48,7 @@ public class GimmickManager : MonoBehaviour
         bool result = true;
         foreach (var obj in m_observeObjects)
         {
-            result &= obj.state;
+            result &= obj.GetState();
         }
         return result;
     }

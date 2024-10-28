@@ -48,7 +48,7 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
         // このスイッチに指定されたすべてのオブジェクトのステートを反転
         foreach (var obj in m_objects)
         {
-            obj.state = !obj.state;
+            obj.SetState(!obj.GetState());
         }
 
         // 色をじわっと変えて、元に戻す

@@ -18,10 +18,10 @@ public class YukiImpactDoor : ToggleState
     void Update()
     {
         // ƒIƒ“ƒIƒt‚Åˆ—‚ğ•Ï‚¦‚é
-        if (state)
+        if (GetState())
         {
             // ”ÍˆÍ‚Éû‚ß‚é
-            if (transform.position.y < m_initPos.y + 7)
+            if (transform.position.y < 8)
             {
                 transform.Translate(m_speed * Time.deltaTime);
             }

@@ -8,5 +8,21 @@ public abstract class ToggleState : MonoBehaviour
     // 状態をこれに記録。　
     // インパクトスイッチがこれを参照。　
 
-    public bool state;
+    private bool state;
+
+    [SerializeField]
+    private AudioClip se;
+
+    public void SetState(bool value)
+    {
+        state = value;
+
+        // ここで音を鳴らす
+        AudioSource.PlayClipAtPoint(se, transform.position);
+    }
+
+    public bool GetState()
+    {
+        return state;
+    }
 }
