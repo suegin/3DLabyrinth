@@ -14,9 +14,7 @@ public class CreditScript : MonoBehaviour
     public float endPos; // スクロールが終わる際のY座標の指定
     public GameObject creditView;
     public GameObject titleSceneView;
-
-    AudioSource audioSource;
-    public AudioClip audioClip;
+    public GameObject titleBgm;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +22,7 @@ public class CreditScript : MonoBehaviour
         staffrollPosition = rectTransform.anchoredPosition;
         m_eventSystem = EventSystem.current;
         AudioSource source = this.GetComponent<AudioSource>();
-        //source.Stop(audioClip);
-
+        titleBgm.SetActive(false); // タイトルシーンで流れているBGMを消す
     }
 
     // Update is called once per frame
@@ -48,7 +45,7 @@ public class CreditScript : MonoBehaviour
         // +Y座標にスクロールする
         if (rectTransform.anchoredPosition.y < endPos)
         {
-            staffrollPosition.y += 0.3f; // スクロールスピード
+            staffrollPosition.y += 0.1f; // スクロールスピード
             rectTransform.anchoredPosition = staffrollPosition;
         }
     }
