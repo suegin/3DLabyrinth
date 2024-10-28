@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using static Unity.VisualScripting.Member;
 
 public class CreditScript : MonoBehaviour
 {
@@ -14,11 +15,17 @@ public class CreditScript : MonoBehaviour
     public GameObject creditView;
     public GameObject titleSceneView;
 
+    AudioSource audioSource;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         staffrollPosition = rectTransform.anchoredPosition;
         m_eventSystem = EventSystem.current;
+        AudioSource source = this.GetComponent<AudioSource>();
+        //source.Stop(audioClip);
+
     }
 
     // Update is called once per frame
