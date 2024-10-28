@@ -9401,7 +9401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393776000022004238, guid: 2ec45aca66161594e9a7e7fc33b22d93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.5
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 1393776000022004238, guid: 2ec45aca66161594e9a7e7fc33b22d93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9409,7 +9409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393776000022004238, guid: 2ec45aca66161594e9a7e7fc33b22d93, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2498235075641093303, guid: 2ec45aca66161594e9a7e7fc33b22d93, type: 3}
       propertyPath: switchPush
@@ -13099,7 +13099,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.47
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13107,7 +13107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.06
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 314197946023522060, guid: 9ca6be2a3e7d54945b24b958372d3406, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14351,7 +14351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transPos: {x: 0, y: 0, z: 0}
-  m_burnSE: {fileID: 0}
+  m_burnSE: {fileID: 8300000, guid: 6878c5147c7598e479fc4f87b0feddab, type: 3}
 --- !u!64 &1956216419
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16172,7 +16172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transPos: {x: 0, y: 0, z: 0}
-  m_burnSE: {fileID: 0}
+  m_burnSE: {fileID: 8300000, guid: 6878c5147c7598e479fc4f87b0feddab, type: 3}
 --- !u!64 &2135353706
 MeshCollider:
   m_ObjectHideFlags: 0
