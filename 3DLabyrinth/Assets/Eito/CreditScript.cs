@@ -15,6 +15,8 @@ public class CreditScript : MonoBehaviour
     public GameObject creditView;
     public GameObject titleSceneView;
     public GameObject titleBgm;
+    public GameObject backGround;
+    public GameObject creditBackGround;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,13 @@ public class CreditScript : MonoBehaviour
         m_eventSystem = EventSystem.current;
         AudioSource source = this.GetComponent<AudioSource>();
         titleBgm.SetActive(false); // タイトルシーンで流れているBGMを消す
+        backGround.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        creditBackGround.SetActive(true);
         // Aボタンを押すとスクロールスピードが上がる
         if (Input.GetKey("joystick button 0"))　
         {
@@ -45,7 +49,7 @@ public class CreditScript : MonoBehaviour
         // +Y座標にスクロールする
         if (rectTransform.anchoredPosition.y < endPos)
         {
-            staffrollPosition.y += 0.1f; // スクロールスピード
+            staffrollPosition.y += 0.2f; // スクロールスピード
             rectTransform.anchoredPosition = staffrollPosition;
         }
     }
