@@ -10,7 +10,7 @@ public class CoinController : MonoBehaviour
     void Update()
     {
         // ‰ñ“]‚Æ‚©•‚—V‚Æ‚©
-        transform.Rotate(m_rotaSpeed, Space.World);
+        transform.Rotate(m_rotaSpeed * Time.deltaTime, Space.World);
     }
 
     private void OnTriggerEnter(Collider other)
