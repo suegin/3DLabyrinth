@@ -30,7 +30,7 @@ public class YukiImpactSwitch : MonoBehaviour, ISwitch
         // これはめんどいのでロード
         m_onMaterial = (Material)Resources.Load("DarkGreen");
         m_offMaterial = (Material)Resources.Load("Green");
-        m_initPos = transform.position;
+        m_initPos = transform.localPosition;
     }
 
     // ボールが当たってもInteractを実行
