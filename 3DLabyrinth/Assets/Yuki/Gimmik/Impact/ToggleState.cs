@@ -10,15 +10,22 @@ public abstract class ToggleState : MonoBehaviour
 
     private bool state;
 
-    [SerializeField]
-    private AudioClip se;
-
     public void SetState(bool value)
+    {
+        state = value;
+    }
+
+    public void SetState(bool value, AudioClip se)
     {
         state = value;
 
         // ‚±‚±‚Å‰¹‚ð–Â‚ç‚·
-        AudioSource.PlayClipAtPoint(se, transform.position);
+        AudioSource source = GetComponent<AudioSource>();
+        if (source != null)
+        {
+            source.clip = se;
+            source.Play();
+        }
     }
 
     public bool GetState()
