@@ -5,6 +5,7 @@ using UnityEngine;
 public class Magma : MonoBehaviour
 {
     GameObject player;
+    GameObject ball;
     [SerializeField]
     Vector3 transPos = new Vector3(0, 0, 0);
     [SerializeField]
@@ -14,6 +15,7 @@ public class Magma : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+        ball = GameObject.Find("Ball");
         m_fadeOut = GameObject.Find("FadeManager").GetComponent<FadeOut>();
     }
     void Update()
@@ -26,6 +28,12 @@ public class Magma : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Burning());
+        }
+
+        if(collision.gameObject.CompareTag("Ball"))
+        {
+            collision.transform.position = transPos;
+            collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 
