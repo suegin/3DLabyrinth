@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
-    private Vector3 m_rotaSpeed = new Vector3(0.0f, 2.0f, 0.0f);
+    private Vector3 m_rotaSpeed = new Vector3(0.0f, 500.0f, 0.0f);
 
     // Update is called once per frame
     void Update()
