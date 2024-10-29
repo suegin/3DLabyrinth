@@ -16,7 +16,7 @@ public class PlayerRayCaster : MonoBehaviour
     //public AudioClip ballGrab;
     //public AudioClip ballThrow;
     // 自分の状態
-    private bool m_isGrabbingBall = false;
+    public bool m_isGrabbingBall { get; private set; } = false;
     public bool isCatchedBallCollider = false;
     public bool isCatchedSwitchCollider = false;
 
@@ -48,14 +48,12 @@ public class PlayerRayCaster : MonoBehaviour
         {
             // 離す処理 長くなるから関数化
             Throw();
-            m_isGrabbingBall = false;
         }
         // でなくて、視界にボールがあるなら
         else if (isCatchedBallCollider)
         {
             // 握る処理
             Grab();
-            m_isGrabbingBall = true;
         }
     }
 
@@ -98,10 +96,11 @@ public class PlayerRayCaster : MonoBehaviour
         m_grabObject.transform.SetParent(transform, true);
         // そのオブジェクトを特定の位置に移動(つかむ感じ)
         m_grabObject.transform.localPosition = m_grabPosition;
-        // オブジェクトの物理演算を無効化する
+        // オブジェクトの物理演算と当たり判定を無効化
         m_grabObject.GetComponent<Rigidbody>().isKinematic = true;
-        m_grabObject.GetComponent<SphereCollider>().enabled = false;
-       // bgmAudioSource.Play();
+        m_grabObject.GetComponent<SphereCollider>().isTrigger = true;
+        // bgmAudioSource.Play();
+        m_isGrabbingBall = true;
     }
 
     private void Throw()
@@ -109,19 +108,32 @@ public class PlayerRayCaster : MonoBehaviour
         Debug.Log("投げる");
         // 無効化していた物理を復活させる
         m_grabObject.GetComponent<Rigidbody>().isKinematic = false;
-        m_grabObject.GetComponent<SphereCollider>().enabled = true;
+        m_grabObject.GetComponent<SphereCollider>().isTrigger = false;
         // 親子関係解除
         m_grabObject.transform.SetParent(null);
         // 自分(カメラ)の向きにAddForce
         m_grabObject.GetComponent<Rigidbody>()
             .AddForce(transform.forward * kThrowPower, ForceMode.Impulse);
-       // bgmAudioSource.Play();
+        m_isGrabbingBall = false;
+    }
+
+    // 落とす これは外部から参照させる
+    public void Drop()
+    {
+        // 投げる　の投げないVar
+
+        // 無効化していた物理を復活させる
+        m_grabObject.GetComponent<Rigidbody>().isKinematic = false;
+        m_grabObject.GetComponent<SphereCollider>().isTrigger = false;
+        // 親子関係解除
+        m_grabObject.transform.SetParent(null);
+        m_isGrabbingBall = false;
     }
 
     private void PressSwitch()
     {
         // レイ上のスイッチに押される命令を出すだけ
-        // インターフェースはGetComponentできるのか
+        // インターフェースはGetComponentできるのか→できたっぽい
         m_raycastHit.collider.gameObject
             .GetComponent<ISwitch>().Interact();
     }
