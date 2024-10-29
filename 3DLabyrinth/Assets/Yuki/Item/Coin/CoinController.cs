@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
-    private Vector3 m_rotaSpeed = new Vector3(0.0f, 2.0f, 0.0f);
+    private Vector3 m_rotaSpeed = new Vector3(0.0f, 500.0f, 0.0f);
 
     // Update is called once per frame
     void Update()
     {
         // ‰ñ“]‚Æ‚©•‚—V‚Æ‚©
-        transform.Rotate(m_rotaSpeed, Space.World);
+        transform.Rotate(m_rotaSpeed * Time.deltaTime, Space.World);
     }
 
     private void OnTriggerEnter(Collider other)
