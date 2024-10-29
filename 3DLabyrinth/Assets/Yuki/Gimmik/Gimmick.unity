@@ -973,17 +973,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560051293}
   m_CullTransparentMesh: 1
---- !u!114 &585520446 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5576770212826864704, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
-  m_PrefabInstance: {fileID: 1209945355241579496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b9f6d4aa91294488113c8826c65119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &591949712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,17 +1053,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5855652976047797850, guid: 5c85d6e592ced7a45877024e93291088, type: 3}
   m_PrefabInstance: {fileID: 344566008298098646}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &703070625 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4450514133972982097, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
-  m_PrefabInstance: {fileID: 1209945355241579496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b9f6d4aa91294488113c8826c65119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &712393353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,17 +1547,6 @@ Transform:
   - {fileID: 4244702229534412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &939375909 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1779368054557435686, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
-  m_PrefabInstance: {fileID: 1209945355241579496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b9f6d4aa91294488113c8826c65119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &941687401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,6 +4489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioMixer: {fileID: 24100000, guid: 0a81626ce25411142b27801f798882fc, type: 2}
+  m_SEOptionSE: {fileID: 0}
 --- !u!4 &1857193076
 Transform:
   m_ObjectHideFlags: 0
@@ -4606,6 +4574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_jumpForce: {x: 0, y: 10, z: 0}
+  m_jumpSE: {fileID: 0}
 --- !u!64 &1916631606
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4693,17 +4662,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1921591541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2079826500332017146, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
-  m_PrefabInstance: {fileID: 1209945355241579496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b9f6d4aa91294488113c8826c65119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1941994064
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,19 +5735,19 @@ PrefabInstance:
     - target: {fileID: 8186382439982408558, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_swiches.Array.data[0]
       value: 
-      objectReference: {fileID: 703070625}
+      objectReference: {fileID: 0}
     - target: {fileID: 8186382439982408558, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_swiches.Array.data[1]
       value: 
-      objectReference: {fileID: 1921591541}
+      objectReference: {fileID: 0}
     - target: {fileID: 8186382439982408558, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_swiches.Array.data[2]
       value: 
-      objectReference: {fileID: 585520446}
+      objectReference: {fileID: 0}
     - target: {fileID: 8186382439982408558, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_swiches.Array.data[3]
       value: 
-      objectReference: {fileID: 939375909}
+      objectReference: {fileID: 0}
     - target: {fileID: 8186382439982408558, guid: a3ddadb073138154e9c2ce8cc1f45c53, type: 3}
       propertyPath: m_observeObjects.Array.data[0]
       value: 
