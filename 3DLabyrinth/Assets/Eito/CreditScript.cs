@@ -40,7 +40,7 @@ public class CreditScript : MonoBehaviour
         // Bボタンを押すとタイトルシーンに戻る
         if (Input.GetKey("joystick button 1"))
         {
-            SceneManager.LoadScene(2); // クレジットリセット(タイトルシーン再ロード)
+            SceneManager.LoadScene(3); // クレジットリセット(タイトルシーン再ロード)
             creditView.SetActive(false);
             titleSceneView.SetActive(true);
             FocusButton();
