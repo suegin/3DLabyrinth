@@ -14504,9 +14504,9 @@ RectTransform:
   - {fileID: 284671725}
   - {fileID: 1982668572}
   - {fileID: 1584315070}
+  - {fileID: 357272578}
   - {fileID: 301083682}
   - {fileID: 1829615212}
-  - {fileID: 357272578}
   - {fileID: 1604248069}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14986,7 +14986,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829615211}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -16003,6 +16003,7 @@ GameObject:
   - component: {fileID: 2000025220}
   - component: {fileID: 2000025219}
   - component: {fileID: 2000025218}
+  - component: {fileID: 2000025221}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -16060,6 +16061,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000025221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000025217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329bb9fd10aa9c5409431a2e826029a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2005171753
 PrefabInstance:
   m_ObjectHideFlags: 0
