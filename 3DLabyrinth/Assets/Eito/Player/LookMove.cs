@@ -20,6 +20,7 @@ public class LookMove : MonoBehaviour
     {
         m_targetPos = transform.position + m_targetOffset;
         m_camera = transform.GetChild(0).gameObject;
+        s_canLookMove = true;
     }
 
     // Update is called once per frame

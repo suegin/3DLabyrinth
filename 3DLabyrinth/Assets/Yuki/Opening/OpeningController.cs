@@ -13,11 +13,8 @@ public class OpeningController : MonoBehaviour
     // 一定時間たったらフェードして次のテキストを表示…をしたい
     // 一定時間立つ他、Aボタンを押しても次に進む　
 
-    private string[] m_texts =
-    {
-        "あああ",
-        "いいい"
-    };
+    [SerializeField]
+    private List<string> m_texts = new List<string>();
 
     private CanvasGroup m_canvasGroup;
     private TextMeshProUGUI m_text;
@@ -103,7 +100,7 @@ public class OpeningController : MonoBehaviour
             m_timer = 0;
             m_textNum++;
             // 最後の文字まで言ったら終了。
-            if (m_textNum >= m_texts.Length)
+            if (m_textNum >= m_texts.Count)
             {
                 StartCoroutine(End());
                 m_enabled = false;
