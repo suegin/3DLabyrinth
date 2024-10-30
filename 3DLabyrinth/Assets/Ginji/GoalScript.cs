@@ -26,8 +26,13 @@ public class GoalScript : MonoBehaviour
         //当たったゲームオブジェクトがPlayerタグだったとき
         if (collision.gameObject.CompareTag("Player"))
         {
+            // プレイヤーを動けなくする
+            collision.gameObject.GetComponent<PlayerMove>().Stop();
+            // staticなんですか…
+            LookMove.SetCanMove(false);
+
             fadeOut.ChangeScene();
-            Debug.Log("a");
+            //Debug.Log("a");
         }
     }
 }
