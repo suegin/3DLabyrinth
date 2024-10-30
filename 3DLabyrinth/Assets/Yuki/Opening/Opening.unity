@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 2057664813}
   - component: {fileID: 2057664815}
   - component: {fileID: 2057664816}
+  - component: {fileID: 2057664817}
   m_Layer: 5
   m_Name: OpeningMessege
   m_TagString: Untagged
@@ -622,8 +623,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fb0cea0bb24059846aa877030df1af6a, type: 2}
-  m_sharedMaterial: {fileID: -4017428024647073299, guid: fb0cea0bb24059846aa877030df1af6a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec888b16b12a1a14daf00eca8bc4c95a, type: 2}
+  m_sharedMaterial: {fileID: -7220282976775669530, guid: ec888b16b12a1a14daf00eca8bc4c95a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -724,6 +725,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2057664817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057664811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &2503789691651397965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -815,6 +831,10 @@ PrefabInstance:
     - target: {fileID: 8908238506731104075, guid: c3984b4c327d68640a58f632724e87cf, type: 3}
       propertyPath: m_Name
       value: FadePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908238506731104075, guid: c3984b4c327d68640a58f632724e87cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
