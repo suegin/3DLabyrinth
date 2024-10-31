@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class YukiToggleSwitchController : MonoBehaviour, ISwitch
@@ -23,12 +24,16 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
     [SerializeField]
     private bool m_canTurnOff = false;
 
+    private SwitchNumTextController m_numText;
+
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         m_meshRenderer = GetComponent<MeshRenderer>();
-        ChangeSwitchState(isOn);
         m_audioSource = GetComponent<AudioSource>();
+        m_numText = GameObject.FindWithTag("DoorSwitchNum").GetComponent<SwitchNumTextController>();
+        yield return null;
+        ChangeSwitchState(isOn);
     }
 
     public void Interact()
@@ -47,15 +52,17 @@ public class YukiToggleSwitchController : MonoBehaviour, ISwitch
         // 引数の状態に応じてデータを変える
         if (state)
         {
-            // オンの時の状態
+            // オンになった時の状態
             transform.localPosition = Vector3.zero;
             m_meshRenderer.material = m_onMaterial;
+            m_numText.DecreaseText();
         }
         else
         {
             // オフの時の状態
             transform.localPosition = new Vector3(0, 2, 0);
             m_meshRenderer.material = m_offMaterial;
+            m_numText.IncreaseText();
         }
     }
 

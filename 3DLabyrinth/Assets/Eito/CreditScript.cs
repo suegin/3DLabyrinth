@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using static Unity.VisualScripting.Member;
 
 public class CreditScript : MonoBehaviour
 {
@@ -26,12 +23,12 @@ public class CreditScript : MonoBehaviour
         AudioSource source = this.GetComponent<AudioSource>();
         titleBgm.SetActive(false); // タイトルシーンで流れているBGMを消す
         backGround.SetActive(false);
+        creditBackGround.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        creditBackGround.SetActive(true);
         // Aボタンを押すとスクロールスピードが上がる
         if (Input.GetKey("joystick button 0"))　
         {
@@ -40,7 +37,7 @@ public class CreditScript : MonoBehaviour
         // Bボタンを押すとタイトルシーンに戻る
         if (Input.GetKey("joystick button 1"))
         {
-            SceneManager.LoadScene(3); // クレジットリセット(タイトルシーン再ロード)
+            SceneManager.LoadScene("TitleScene"); // クレジットリセット(タイトルシーン再ロード)
             creditView.SetActive(false);
             titleSceneView.SetActive(true);
             FocusButton();

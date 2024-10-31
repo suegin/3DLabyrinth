@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +29,7 @@ public class OpeningController : MonoBehaviour
     // 有効かどうか
     private bool m_enabled = true;
 
-    private void Start()
+    private IEnumerator Start()
     {
         Application.targetFrameRate = 60;
 
@@ -41,6 +40,9 @@ public class OpeningController : MonoBehaviour
 
         // 配列の要素数は1から数える
         //Debug.Log(m_texts.Length);
+
+        // 1フレ待つ
+        yield return null;
 
         // フェード
         StartCoroutine(YukiFadeManager.FadeIn(1.0f));

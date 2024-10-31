@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Ginji/LabyrinthTest.unity
-    guid: b26cb391c10c6ba469c4429b91066b7c
+    path: Assets/Eito/Title/TitleScene_Marged.unity
+    guid: 47b9636e479bfd24aab16daf682b2099
   - enabled: 1
     path: Assets/Yuki/Opening/Opening.unity
     guid: 1fa38d03cb061f047a3354500c842180
   - enabled: 1
+    path: Assets/Ginji/LabyrinthTest.unity
+    guid: b26cb391c10c6ba469c4429b91066b7c
+  - enabled: 1
     path: Assets/Eito/Scene/ClearScene.unity
     guid: 3f9e173bb49dcb34d9943538751693c3
-  - enabled: 1
-    path: Assets/Eito/Title/TitleScene_Marged.unity
-    guid: 47b9636e479bfd24aab16daf682b2099
   m_configObjects: {}

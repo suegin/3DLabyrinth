@@ -20,7 +20,7 @@ public class TargetScript : MonoBehaviour
     void FixedUpdate()
     {
         if (m_canMove)
-        transform.Translate(new Vector3 (Mathf.Cos(Time.time * 2) * kTargetMoveWidth * Time.fixedDeltaTime, 0.0f, 0.0f)); // ¶‰EˆÚ“®
+        transform.Translate(new Vector3 (Mathf.Sin(Time.time * 2) * kTargetMoveWidth * Time.fixedDeltaTime, 0.0f, 0.0f)); // ¶‰EˆÚ“®
     }
 
     public void SetCanMove(bool value)

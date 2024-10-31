@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Quit : MonoBehaviour
@@ -9,13 +6,10 @@ public class Quit : MonoBehaviour
     public void QuitGame()
     {
         // エディタかexeかで処理を分岐させよう
-        if (Application.platform == RuntimePlatform.WindowsEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
-        {
-            Application.Quit();
-        }
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

@@ -24,7 +24,7 @@ public class YukiToggleDoor : MonoBehaviour
         if (CheckSwitches())
         {
             // ”ÍˆÍ‚ÉŽû‚ß‚é
-            if (transform.position.y < m_initPos.y + 7)
+            if (transform.position.y < m_initPos.y + 5)
             {
                 transform.Translate(m_speed * Time.fixedDeltaTime);
             }

@@ -12,6 +12,7 @@ TagManager:
   - CreditView
   - SE
   - BallArea
+  - DoorSwitchNum
   layers:
   - Default
   - TransparentFX
