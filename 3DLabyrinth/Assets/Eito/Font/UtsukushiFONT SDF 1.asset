@@ -21,6 +21,7 @@ Material:
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
+    serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
