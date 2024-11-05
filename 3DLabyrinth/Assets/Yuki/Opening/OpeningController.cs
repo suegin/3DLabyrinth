@@ -123,7 +123,9 @@ public class OpeningController : MonoBehaviour
     private IEnumerator End()
     {
         // フェードを待つ
-        yield return YukiFadeManager.FadeOut(1.0f);
+        YukiFadeManager.FadeOut(1.0f);
+        // バグるので明示的に待つ
+        yield return new WaitForSeconds(1.0f);
         // シーンをロード
         SceneManager.LoadScene("LabyrinthTest");
     }

@@ -508,6 +508,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6479844317615579863, guid: c3984b4c327d68640a58f632724e87cf, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479844317615579863, guid: c3984b4c327d68640a58f632724e87cf, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143017286420022620, guid: c3984b4c327d68640a58f632724e87cf, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8908238506731104075, guid: c3984b4c327d68640a58f632724e87cf, type: 3}
       propertyPath: m_Name
       value: FadePanel
@@ -7973,7 +7985,6 @@ GameObject:
   - component: {fileID: 8247906761340289141}
   - component: {fileID: 4761454147080211103}
   - component: {fileID: 3544819738213691580}
-  - component: {fileID: 8494022055162704939}
   m_Layer: 5
   m_Name: PlanText
   m_TagString: Untagged
@@ -7981,18 +7992,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8494022055162704939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8494022055162704938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c89458dfa12d44a94790ac4d5c4e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8583864527553925655
 RectTransform:
   m_ObjectHideFlags: 0

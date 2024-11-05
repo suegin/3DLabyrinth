@@ -5,22 +5,33 @@ using UnityEngine;
 // パネルを左右に移動させるだけ
 public class TargetScript : MonoBehaviour
 {
-    private Vector3 targetPos;
     // 的の振れ幅(座標の値)
-    private const float kTargetMoveWidth = 10.0f;
+    private Vector3 m_initPos;
+    private const float kTargetMoveWidth = 8.0f;
     private bool m_canMove = true;
+    private int m_frameTimer = 0;
+    // 何秒周期か
+    private const float kCycle = 3;
+    private const float kFactor = 360 / (50 * kCycle);
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        targetPos = transform.position;
+        m_initPos = transform.localPosition;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        // これもうわかんねえな
         if (m_canMove)
-        transform.Translate(new Vector3 (Mathf.Sin(Time.time * 2) * kTargetMoveWidth * Time.fixedDeltaTime, 0.0f, 0.0f)); // 左右移動
+        {
+            m_frameTimer++;
+            float rad = m_frameTimer * kFactor * Mathf.Deg2Rad;
+            Debug.Log(rad);
+            Vector3 pos = new Vector3(m_initPos.x , m_initPos.y,  m_initPos.z + Mathf.Cos(rad) * kTargetMoveWidth);
+            // 向きに合わせて座標を変える
+            transform.localPosition = pos;
+        }
     }
 
     public void SetCanMove(bool value)
